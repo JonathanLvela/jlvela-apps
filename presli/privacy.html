@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Presli</title>
+  <meta name="description" content="Presli Privacy Policy. All your health data stays on your device. No accounts, no cloud, no tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #E53E3E; --red-dark: #C53030;
+      --bg: #FDFCFC; --card: #FFFFFF;
+      --text: #1A1A2E; --muted: #6B7280; --border: rgba(26,26,46,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,252,252,0.88); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 800px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 900; color: var(--text);
+      text-decoration: none; letter-spacing: -0.5px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-icon {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      box-shadow: 0 2px 8px rgba(229,62,62,0.3);
+    }
+    .nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; }
+
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(229,62,62,0.08); border: 1px solid rgba(229,62,62,0.2);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 13px; font-weight: 600; color: var(--red); margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .updated { font-size: 13px; color: var(--muted); margin-bottom: 48px; }
+
+    h2 { font-size: 20px; font-weight: 800; margin-top: 40px; margin-bottom: 12px; }
+    p { font-size: 15px; color: #374151; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { font-size: 15px; color: #374151; margin-bottom: 8px; }
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: rgba(229,62,62,0.05); border: 1px solid rgba(229,62,62,0.15);
+      border-radius: 16px; padding: 20px 24px; margin: 32px 0;
+    }
+    .highlight-box p { color: var(--text); font-weight: 600; margin: 0; }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 14px; }
+    th { text-align: left; font-weight: 700; color: var(--text); padding: 10px 12px; background: rgba(26,26,46,0.04); }
+    td { padding: 10px 12px; color: #374151; border-top: 1px solid var(--border); }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 24px;
+      text-align: center; font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/presli/">
+      <div class="nav-logo-icon">❤️</div>
+      Presli
+    </a>
+    <a class="nav-back" href="/presli/">← Back to home</a>
+  </div>
+</div>
+
+<div class="content">
+  <div class="page-badge">🔒 Privacy</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 2026</p>
+
+  <div class="highlight-box">
+    <p>🛡️ Short version: Presli stores all your health data locally on your device. We do not collect, transmit, or sell any personal information. The only third parties involved are Apple and Google, and only if you make a purchase.</p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>Presli is a health-tracking mobile application available on iOS and Android. References to "we," "us," or "the app" in this policy refer to the developer of Presli. Contact: <a href="mailto:john.lerma4444@gmail.com">john.lerma4444@gmail.com</a></p>
+
+  <h2>2. Data we collect</h2>
+
+  <p><strong>Health &amp; vitals data</strong><br>
+  All health data you enter — blood pressure, weight, heart rate, sleep, caffeine, medication schedules, dose logs, custom metrics, and notes — is stored <strong>exclusively on your device</strong> using local storage (Hive database and SharedPreferences). This data is never transmitted to any server, never shared with third parties, and is not accessible to us.</p>
+
+  <p><strong>In-app purchases</strong><br>
+  If you purchase Presli Premium, the transaction is processed entirely by Apple Inc. (App Store) or Google LLC (Google Play). We receive only a cryptographic confirmation that the purchase was completed. We do not receive your payment details, Apple ID, Google account, or any other personal information. Your health data plays no role in the purchase process.</p>
+
+  <p><strong>Analytics &amp; advertising</strong><br>
+  We do not use any analytics SDKs, advertising networks, crash-reporting services, or tracking tools. We collect no usage data or behavioral data of any kind.</p>
+
+  <h2>3. Data we do not collect</h2>
+  <ul>
+    <li>Names, email addresses, or account information</li>
+    <li>Location data</li>
+    <li>Device identifiers (IDFA, GAID, etc.)</li>
+    <li>IP addresses</li>
+    <li>Any health or vitals data</li>
+  </ul>
+
+  <h2>4. Data stored on your device</h2>
+  <p>The following is stored locally on your device only:</p>
+  <ul>
+    <li>Profile names you create</li>
+    <li>Blood pressure, weight, heart rate, sleep, and caffeine readings</li>
+    <li>Medication records and dose logs</li>
+    <li>Custom metric definitions and readings</li>
+    <li>App settings (theme, notification preferences, units)</li>
+    <li>Purchase unlock status</li>
+  </ul>
+  <p>This data never leaves your device unless you explicitly choose to export it (e.g., via the PDF export or backup feature, which uses your device's share sheet — your choice, your control).</p>
+
+  <h2>5. Third-party services</h2>
+  <p>The only third parties involved in the operation of this app are:</p>
+  <table>
+    <tr><th>Party</th><th>Purpose</th><th>Their privacy policy</th></tr>
+    <tr><td>Apple Inc.</td><td>App Store distribution &amp; payment processing (iOS)</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td></tr>
+    <tr><td>Google LLC</td><td>Play Store distribution &amp; payment processing (Android)</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td></tr>
+  </table>
+  <p>These services are only engaged if you make a purchase. If you use the free version of the app, no third-party services are contacted.</p>
+
+  <h2>6. Permissions we request</h2>
+  <p>The app may request the following device permissions:</p>
+  <ul>
+    <li><strong>Notifications</strong> — to send you reminders you configure in Settings. Denying this permission will not affect any other functionality.</li>
+  </ul>
+
+  <h2>7. Data storage &amp; security</h2>
+  <p>All data is stored in your device's sandboxed local storage. It may be included in your device's standard system backup (iCloud on iOS, Google Backup on Android) if you have backups enabled. This is handled entirely by your operating system. We have no access to your backups.</p>
+
+  <h2>8. Data retention &amp; deletion</h2>
+  <p>Your data is retained on your device until you choose to delete it. You can:</p>
+  <ul>
+    <li>Delete individual readings within the app</li>
+    <li>Remove a profile (and all associated data) from the Profiles section</li>
+    <li>Uninstall the app to remove all locally stored data permanently</li>
+  </ul>
+
+  <h2>9. Children's privacy</h2>
+  <p>Presli is not directed at children under 13 (or under 16 in applicable jurisdictions). We do not knowingly collect information from children. Since all data is stored locally on the device, no information is ever transmitted to us regardless of who uses the app.</p>
+
+  <h2>10. Medical disclaimer</h2>
+  <p>Presli is a personal logging tool and is not a medical device. It is not intended to diagnose, treat, cure, or prevent any medical condition, and does not constitute medical advice. Always consult a qualified healthcare provider for any health-related decisions.</p>
+
+  <h2>11. Changes to this policy</h2>
+  <p>If we make material changes to this Privacy Policy, we will update the "Last updated" date above and include the updated policy in a new app release. Continued use of the app after an update constitutes acceptance of the revised policy.</p>
+
+  <h2>12. Contact</h2>
+  <p>If you have questions about this Privacy Policy, please contact us at: <a href="mailto:john.lerma4444@gmail.com">john.lerma4444@gmail.com</a></p>
+
+  <p style="margin-top:40px; font-style:italic; color:var(--muted); font-size:14px;">Presli — all your health data stays on your device.</p>
+</div>
+
+<footer>
+  <p>© 2026 Presli</p>
+  <div class="footer-links">
+    <a href="/presli/">Home</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:john.lerma4444@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -2,10 +2,25 @@
 [build]
   publish = "."
 
-# Clean URLs: /support → /support.html etc.
+# Clean URLs
 [[redirects]]
-  from   = "/support"
-  to     = "/support.html"
+  from   = "/presli"
+  to     = "/presli/"
+  status = 301
+
+[[redirects]]
+  from   = "/presli/support"
+  to     = "/presli/support.html"
+  status = 200
+
+[[redirects]]
+  from   = "/presli/privacy"
+  to     = "/presli/privacy.html"
+  status = 200
+
+[[redirects]]
+  from   = "/presli/terms"
+  to     = "/presli/terms.html"
   status = 200
 
 # Security headers

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Presli</title>
+  <meta name="description" content="Presli support and frequently asked questions. Get help with blood pressure logging, medications, PDF reports, Premium, and notifications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #E53E3E; --red-dark: #C53030;
+      --bg: #FDFCFC; --card: #FFFFFF;
+      --text: #1A1A2E; --muted: #6B7280; --border: rgba(26,26,46,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(253,252,252,0.88); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 800px; margin: 0 auto; padding: 0 24px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px; font-weight: 900; color: var(--text);
+      text-decoration: none; letter-spacing: -0.5px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-icon {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      box-shadow: 0 2px 8px rgba(229,62,62,0.3);
+    }
+    .nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+
+    .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; }
+
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(229,62,62,0.08); border: 1px solid rgba(229,62,62,0.2);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 13px; font-weight: 600; color: var(--red); margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .subtitle { font-size: 17px; color: var(--muted); margin-bottom: 48px; }
+
+    .contact-card {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 20px; padding: 32px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap; margin-bottom: 52px;
+      box-shadow: 0 8px 32px rgba(229,62,62,0.25);
+    }
+    .contact-card h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .contact-card p { font-size: 14px; color: rgba(255,255,255,0.7); }
+    .btn-white {
+      display: inline-block; background: #fff; color: var(--red);
+      font-weight: 700; font-size: 14px; padding: 12px 22px;
+      border-radius: 12px; text-decoration: none;
+      white-space: nowrap; transition: opacity 0.2s;
+    }
+    .btn-white:hover { opacity: 0.9; }
+
+    .faq-section-label {
+      font-size: 13px; font-weight: 700; color: var(--red);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .faq-group { margin-bottom: 40px; }
+    .faq-group-title {
+      font-size: 18px; font-weight: 800; margin-bottom: 12px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+    details {
+      border: 1px solid var(--border); border-radius: 14px;
+      margin-bottom: 8px; overflow: hidden; background: var(--card);
+    }
+    details[open] { box-shadow: 0 4px 16px rgba(26,26,46,0.06); }
+    summary {
+      padding: 16px 18px; font-size: 15px; font-weight: 600;
+      cursor: pointer; list-style: none;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+'; font-size: 20px; font-weight: 400;
+      color: var(--muted); flex-shrink: 0; transition: transform 0.2s;
+    }
+    details[open] summary::after { content: '−'; }
+    .faq-body { padding: 0 18px 16px; font-size: 14px; color: #374151; line-height: 1.7; }
+    .faq-body p { margin-bottom: 8px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+    .faq-body a { color: var(--red); text-decoration: none; }
+    .faq-body a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 24px;
+      text-align: center; font-size: 13px; color: var(--muted);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+    .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 6px; }
+  </style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/presli/">
+      <div class="nav-logo-icon">❤️</div>
+      Presli
+    </a>
+    <a class="nav-back" href="/presli/">← Back to home</a>
+  </div>
+</div>
+
+<div class="content">
+  <div class="page-badge">💬 Support</div>
+  <h1>How can we help?</h1>
+  <p class="subtitle">Find answers below, or reach out directly — we respond within 24 hours.</p>
+
+  <div class="contact-card">
+    <div>
+      <h2>Contact support</h2>
+      <p>Can't find your answer? Send us an email and we'll get back to you quickly.</p>
+    </div>
+    <a href="mailto:john.lerma4444@gmail.com" class="btn-white">✉️ Email us</a>
+  </div>
+
+  <div class="faq-section-label">Frequently Asked Questions</div>
+
+  <!-- GETTING STARTED -->
+  <div class="faq-group">
+    <div class="faq-group-title">Getting started</div>
+
+    <details>
+      <summary>How do I set up my profile?</summary>
+      <div class="faq-body">
+        <p>When you first open Presli, the onboarding flow will prompt you to enter a name and configure basic settings. You can always add more profiles later from the Profiles section on the Home tab.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I track multiple people?</summary>
+      <div class="faq-body">
+        <p>Yes! You can add multiple profiles — useful for tracking yourself and family members like a spouse or elderly parent. Switch between profiles from the Home tab. With Presli Premium you can add unlimited profiles.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does the app require an account or internet connection?</summary>
+      <div class="faq-body">
+        <p>No account is required, and no internet connection is needed for any core feature. All your data is stored locally on your device. The only time the app needs internet is when processing a Premium upgrade through the App Store or Google Play.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What units does the app support?</summary>
+      <div class="faq-body">
+        <p>Blood pressure is always in mmHg. Weight can be logged in kilograms, pounds, or stone — you can change this in Settings. Caffeine is tracked in mg. Sleep is tracked in hours.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- LOGGING -->
+  <div class="faq-group">
+    <div class="faq-group-title">Logging readings</div>
+
+    <details>
+      <summary>How do I log a blood pressure reading?</summary>
+      <div class="faq-body">
+        <p>Tap the <strong>+</strong> button on the Home tab, then select Blood Pressure. Enter your systolic and diastolic values. The pulse field is optional. The app will automatically classify your reading (Normal, Elevated, Stage 1, Stage 2) and save it with a timestamp.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I backdate a reading?</summary>
+      <div class="faq-body">
+        <p>Yes. When logging any reading, tap the date/time field to change it to any date and time you need. This is useful when you forgot to log something earlier in the day.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I edit or delete a logged reading?</summary>
+      <div class="faq-body">
+        <p>On the Home tab, scroll to the reading you want to edit and swipe left to reveal the edit and delete options. You can also find readings in the Calendar tab to edit from there.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I log weight, heart rate, sleep, or caffeine?</summary>
+      <div class="faq-body">
+        <p>Tap the <strong>+</strong> button on the Home tab and select the type of reading you want to add. Each vital type has its own quick-entry sheet. You can also log them from the quick-action buttons on the dashboard.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What are custom metrics?</summary>
+      <div class="faq-body">
+        <p>Custom Metrics (a Premium feature) let you track any health value not covered by the built-in vitals — for example, blood glucose, oxygen saturation, or any number your doctor wants you to monitor. You define the name and unit, and then log values just like any other reading.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- MEDICATIONS -->
+  <div class="faq-group">
+    <div class="faq-group-title">Medications</div>
+
+    <details>
+      <summary>How do I add a medication?</summary>
+      <div class="faq-body">
+        <p>Go to the <strong>Meds</strong> tab and tap the <strong>+</strong> button. Enter the medication name, dose, frequency, and start date. You can also add optional notes. The medication will appear in your list and in PDF reports.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I log that I took a dose?</summary>
+      <div class="faq-body">
+        <p>On the Meds tab, tap the <strong>Log Dose</strong> button next to a medication. The app records the time and adds it to your dose history. You can view past doses by expanding the medication card.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I get reminders to take my medication?</summary>
+      <div class="faq-body">
+        <p>Yes. In Settings, scroll to the Reminders section and enable medication reminders. You can set a daily reminder time for each medication, and the app will send a notification at that time.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- PDF REPORTS -->
+  <div class="faq-group">
+    <div class="faq-group-title">PDF Reports</div>
+
+    <details>
+      <summary>How do I export a PDF report?</summary>
+      <div class="faq-body">
+        <p>PDF export requires <strong>Presli Premium</strong>. Once unlocked, go to the <strong>Stats</strong> tab and tap the Export button, or find the export option in Settings. You can choose a date range and the PDF will include charts, rolling averages, and your medication list.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I export in Spanish?</summary>
+      <div class="faq-body">
+        <p>Yes. If your device language is set to Spanish, the PDF will be generated entirely in Spanish — including all section headers, chart labels, day names, and medical content. Switch your device language in your device's Settings app.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I share the PDF with my doctor?</summary>
+      <div class="faq-body">
+        <p>After generating the PDF, your device's share sheet opens automatically. You can email it, share it via Messages, save it to Files, print it, or send it through any other app on your device.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="faq-group">
+    <div class="faq-group-title">Presli Premium</div>
+
+    <details>
+      <summary>What's included in Premium?</summary>
+      <div class="faq-body">
+        <p>Premium unlocks five features:</p>
+        <p>• <strong>PDF Reports</strong> — full doctor-ready reports with charts, averages, and medication history</p>
+        <p>• <strong>Custom Themes</strong> — dozens of color schemes to personalize the app</p>
+        <p>• <strong>Custom Metrics</strong> — track any health value beyond the built-in vitals</p>
+        <p>• <strong>Unlimited Profiles</strong> — add as many profiles as you need</p>
+        <p>• <strong>Home Screen Widget</strong> — see your latest BP reading without opening the app</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Is Premium a subscription?</summary>
+      <div class="faq-body">
+        <p>No. Presli Premium is a one-time purchase for $9.99. You pay once and own it forever, including all future updates. There is no recurring charge.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I restore my Premium purchase on a new device?</summary>
+      <div class="faq-body">
+        <p>Go to <strong>Settings → Restore Purchases</strong>. Make sure you're signed in with the same Apple ID or Google account you used when you originally purchased Premium. The restore will complete automatically.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>I purchased Premium but the features aren't unlocked — what do I do?</summary>
+      <div class="faq-body">
+        <p>Try the <strong>Restore Purchases</strong> option in Settings. If that doesn't work, please <a href="mailto:john.lerma4444@gmail.com">contact us</a> with your order number from the App Store or Google Play and we'll resolve it for you.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- DATA & PRIVACY -->
+  <div class="faq-group">
+    <div class="faq-group-title">Data & privacy</div>
+
+    <details>
+      <summary>Is my health data private?</summary>
+      <div class="faq-body">
+        <p>Yes, completely. All your health data is stored only on your device. We have no servers, no accounts, and no way to see your data. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I back up my data?</summary>
+      <div class="faq-body">
+        <p>Go to <strong>Settings → Backup & Restore</strong> to export a backup file. Save it to iCloud Drive, Google Drive, or any other location. To restore, tap Restore Backup and select the file. Your data is included in your device's standard system backup (iCloud or Google Backup) if you have that enabled.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What happens to my data if I delete the app?</summary>
+      <div class="faq-body">
+        <p>All your locally stored data is permanently deleted when you uninstall the app. We recommend exporting a backup or PDF report before uninstalling if you want to keep a record.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does Presli collect any usage or analytics data?</summary>
+      <div class="faq-body">
+        <p>No. Presli contains no analytics SDKs, no advertising networks, no crash reporting services, and no tracking tools of any kind. We collect zero usage or behavioral data.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- NOTIFICATIONS -->
+  <div class="faq-group">
+    <div class="faq-group-title">Notifications & reminders</div>
+
+    <details>
+      <summary>How do I set up reminders?</summary>
+      <div class="faq-body">
+        <p>Go to <strong>Settings</strong> and scroll to the Reminders section. You can enable a daily blood pressure logging reminder, a daily weight reminder, and medication reminders — each with its own time setting.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>I'm not receiving notifications — how do I fix this?</summary>
+      <div class="faq-body">
+        <p>Make sure notifications are enabled for Presli in your device's system Settings app. On iOS, go to Settings → Presli → Notifications. On Android, go to Settings → Apps → Presli → Notifications. On Android 12+, you may also need to disable battery optimization for the app.</p>
+      </div>
+    </details>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Presli</p>
+  <div class="footer-links">
+    <a href="/presli/">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:john.lerma4444@gmail.com">john.lerma4444@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
