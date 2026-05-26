@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JL Vela — Apps</title>
+  <meta name="description" content="Simple, private apps built for everyday life. No accounts. No cloud. No nonsense." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:    #0F0F1A;
+      --ink2:   #1E1E30;
+      --bg:     #F8F7FF;
+      --card:   #FFFFFF;
+      --muted:  #6B7280;
+      --border: rgba(15,15,26,0.08);
+      --accent: #6366F1;
+      --accent-dark: #4F46E5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,15,26,0.95); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1060px; margin: 0 auto; padding: 0 28px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 18px; font-weight: 900; color: #fff;
+      text-decoration: none; letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 900; color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5);
+      text-decoration: none; padding: 7px 12px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #0F0F1A 0%, #1a1040 50%, #0F0F1A 100%);
+      padding: 96px 28px 80px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 640px; margin: 0 auto; position: relative; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 13px; font-weight: 600; color: #a5b4fc; margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px); font-weight: 900;
+      letter-spacing: -2px; line-height: 1.05; color: #fff; margin-bottom: 18px;
+    }
+    .hero h1 span { color: #a5b4fc; }
+    .hero-sub {
+      font-size: 18px; color: rgba(255,255,255,0.5); line-height: 1.7;
+      max-width: 480px; margin: 0 auto 40px;
+    }
+    .hero-pillars {
+      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+    }
+    .hero-pillar {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.45);
+    }
+    .hero-pillar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    /* ── APPS SECTION ─────────────────────────────────────────── */
+    .apps-section {
+      max-width: 1060px; margin: 0 auto; padding: 72px 28px 80px;
+    }
+    .section-header { margin-bottom: 40px; }
+    .section-label {
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(24px, 3vw, 34px); font-weight: 900;
+      letter-spacing: -0.8px; line-height: 1.15;
+    }
+
+    .apps-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* ── APP CARD ─────────────────────────────────────────────── */
+    .app-card {
+      background: var(--card); border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 28px; display: flex; flex-direction: column;
+      transition: box-shadow 0.22s, transform 0.22s;
+      text-decoration: none; color: inherit;
+    }
+    .app-card:hover {
+      box-shadow: 0 12px 40px rgba(15,15,26,0.10);
+      transform: translateY(-3px);
+    }
+    .app-card-top {
+      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 18px;
+    }
+    .app-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .app-meta { flex: 1; min-width: 0; }
+    .app-name {
+      font-size: 20px; font-weight: 900; letter-spacing: -0.4px;
+      margin-bottom: 3px; color: var(--ink);
+    }
+    .app-category {
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .app-platforms {
+      display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
+    }
+    .platform-badge {
+      font-size: 11px; font-weight: 600;
+      padding: 3px 9px; border-radius: 20px;
+      border: 1px solid var(--border); color: var(--muted);
+    }
+    .app-desc {
+      font-size: 14px; color: var(--muted); line-height: 1.65;
+      margin-bottom: 22px; flex: 1;
+    }
+    .app-features {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px;
+    }
+    .app-feature-tag {
+      font-size: 12px; font-weight: 600;
+      padding: 4px 10px; border-radius: 8px;
+      background: rgba(15,15,26,0.04); color: var(--ink);
+    }
+    .app-actions {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 700; padding: 10px 18px;
+      border-radius: 11px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 600; padding: 10px 16px;
+      border-radius: 11px; text-decoration: none;
+      border: 1px solid var(--border); color: var(--muted);
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { color: var(--ink); border-color: rgba(15,15,26,0.2); background: rgba(15,15,26,0.03); }
+
+    /* ── PHILOSOPHY ───────────────────────────────────────────── */
+    .philosophy-section {
+      background: var(--ink); padding: 72px 28px;
+    }
+    .philosophy-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .philosophy-title {
+      font-size: clamp(26px, 3.5vw, 40px); font-weight: 900;
+      color: #fff; letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 16px;
+    }
+    .philosophy-title span { color: #a5b4fc; }
+    .philosophy-desc { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+    .philosophy-values { display: flex; flex-direction: column; gap: 16px; }
+    .philosophy-value {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.04); border-radius: 16px;
+      padding: 18px 20px; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .philosophy-value-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .philosophy-value-title {
+      font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px;
+    }
+    .philosophy-value-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.55; }
+
+    /* ── CONTACT ──────────────────────────────────────────────── */
+    .contact-section { padding: 72px 28px; text-align: center; }
+    .contact-inner { max-width: 500px; margin: 0 auto; }
+    .contact-title { font-size: clamp(24px, 3vw, 34px); font-weight: 900; letter-spacing: -0.8px; margin-bottom: 12px; }
+    .contact-desc { font-size: 16px; color: var(--muted); margin-bottom: 28px; }
+    .btn-contact {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--ink); color: #fff; font-size: 15px; font-weight: 700;
+      padding: 14px 28px; border-radius: 14px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-contact:hover { opacity: 0.85; }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px; text-align: center;
+      font-size: 13px; color: rgba(255,255,255,0.3);
+    }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .philosophy-inner { grid-template-columns: 1fr; gap: 36px; }
+      .nav-links { display: none; }
+      .apps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────── -->
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">
+      <div class="nav-logo-mark">JL</div>
+      JL Vela Apps
+    </a>
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#philosophy">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📱 Independent developer</div>
+    <h1>Apps built with <span>care.</span></h1>
+    <p class="hero-sub">
+      Simple, focused apps for everyday life. No subscriptions traps,
+      no accounts required, no hidden data collection. Just tools that work.
+    </p>
+    <div class="hero-pillars">
+      <div class="hero-pillar"><div class="hero-pillar-dot"></div>Privacy first</div>
+      <div class="hero-pillar"><div class="hero-pillar-dot"></div>One-time purchases</div>
+      <div class="hero-pillar"><div class="hero-pillar-dot"></div>iOS & Android</div>
+      <div class="hero-pillar"><div class="hero-pillar-dot"></div>No accounts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── APPS ─────────────────────────────────────────────────────────── -->
+<div class="apps-section" id="apps">
+  <div class="section-header">
+    <div class="section-label">Available now</div>
+    <div class="section-title">The apps</div>
+  </div>
+
+  <div class="apps-grid">
+
+    <!-- ── PRESLI ── -->
+    <div class="app-card">
+      <div class="app-card-top">
+        <div class="app-icon" style="background: linear-gradient(135deg, #C53030, #E53E3E);">❤️</div>
+        <div class="app-meta">
+          <div class="app-name">Presli</div>
+          <div class="app-category">Health Tracker</div>
+          <div class="app-platforms">
+            <span class="platform-badge">iOS</span>
+            <span class="platform-badge">Android</span>
+          </div>
+        </div>
+      </div>
+      <p class="app-desc">
+        Track blood pressure, weight, heart rate, sleep, caffeine, and medications.
+        All data stays on your device — no cloud, no account, no subscription.
+        Generate polished PDF reports for your doctor visits.
+      </p>
+      <div class="app-features">
+        <span class="app-feature-tag">Blood Pressure</span>
+        <span class="app-feature-tag">Medications</span>
+        <span class="app-feature-tag">PDF Reports</span>
+        <span class="app-feature-tag">Widgets</span>
+        <span class="app-feature-tag">Multi-Profile</span>
+        <span class="app-feature-tag">Spanish</span>
+      </div>
+      <div class="app-actions">
+        <a href="https://presli.app" class="btn-primary" style="background:linear-gradient(135deg,#C53030,#E53E3E); color:#fff;">
+          🌐 Learn more
+        </a>
+        <a href="https://apps.apple.com" class="btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+        <a href="https://play.google.com" class="btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.21.8.21 1.18 0l11.38-6.58-2.46-2.46-10.1 9.04zm15.6-9.02L5.88 7.82 3.18.24C2.8.03 2.38.04 2 .26v23.48c.38.22.8.21 1.18 0l15.6-9.0zm1.04-5.42L16.74 7.5l-2.46 2.46 2.46 2.46 3.08-1.78c.88-.51.88-1.37 0-1.82z"/></svg>
+          Google Play
+        </a>
+      </div>
+    </div>
+
+    <!-- ── PLACEHOLDER (add next app here) ── -->
+    <!--
+    <div class="app-card">
+      <div class="app-card-top">
+        <div class="app-icon" style="background: linear-gradient(135deg, #1565C0, #1E88E5);">🚽</div>
+        <div class="app-meta">
+          <div class="app-name">Bomovi</div>
+          <div class="app-category">Potty Tracker</div>
+          <div class="app-platforms">
+            <span class="platform-badge">iOS</span>
+            <span class="platform-badge">Android</span>
+          </div>
+        </div>
+      </div>
+      <p class="app-desc">
+        Track bowel movements, hydration, and bathroom habits for the whole family.
+        Log events with Bristol Stool Scale, get trend charts, and set reminders.
+      </p>
+      <div class="app-features">
+        <span class="app-feature-tag">Potty Training</span>
+        <span class="app-feature-tag">Bristol Scale</span>
+        <span class="app-feature-tag">Hydration</span>
+        <span class="app-feature-tag">Reminders</span>
+      </div>
+      <div class="app-actions">
+        <a href="https://bomovi.app" class="btn-primary" style="background:linear-gradient(135deg,#1565C0,#1E88E5); color:#fff;">
+          🌐 Learn more
+        </a>
+        <a href="https://apps.apple.com" class="btn-outline">App Store</a>
+        <a href="https://play.google.com" class="btn-outline">Google Play</a>
+      </div>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<!-- ── PHILOSOPHY ────────────────────────────────────────────────────── -->
+<div class="philosophy-section" id="philosophy">
+  <div class="philosophy-inner">
+    <div>
+      <div class="section-label" style="color:#a5b4fc; margin-bottom:10px;">The approach</div>
+      <h2 class="philosophy-title">Built on a few <span>simple beliefs.</span></h2>
+      <p class="philosophy-desc">
+        Every app I build starts from the same place: what's the simplest, most
+        private way to solve this problem well? No investor pressure, no ad revenue
+        to chase, no growth-hacking. Just software that earns its place on your phone.
+      </p>
+    </div>
+    <div class="philosophy-values">
+      <div class="philosophy-value">
+        <div class="philosophy-value-icon">🔒</div>
+        <div>
+          <div class="philosophy-value-title">Your data belongs to you</div>
+          <div class="philosophy-value-desc">All data stays on your device by default. No servers required to use core features.</div>
+        </div>
+      </div>
+      <div class="philosophy-value">
+        <div class="philosophy-value-icon">💳</div>
+        <div>
+          <div class="philosophy-value-title">No subscription traps</div>
+          <div class="philosophy-value-desc">Premium features are one-time purchases. You pay once and own it, including future updates.</div>
+        </div>
+      </div>
+      <div class="philosophy-value">
+        <div class="philosophy-value-icon">🚫</div>
+        <div>
+          <div class="philosophy-value-title">No dark patterns</div>
+          <div class="philosophy-value-desc">No fake urgency, no aggressive upsells, no notification spam. The app earns your trust.</div>
+        </div>
+      </div>
+      <div class="philosophy-value">
+        <div class="philosophy-value-icon">🌍</div>
+        <div>
+          <div class="philosophy-value-title">Accessible to everyone</div>
+          <div class="philosophy-value-desc">Core features are always free. Apps are localized for multiple languages.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ───────────────────────────────────────────────────────── -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-title">Get in touch</h2>
+    <p class="contact-desc">Have a question about one of the apps, found a bug, or just want to say hello? I read every email.</p>
+    <a href="mailto:john.lerma4444@gmail.com" class="btn-contact">
+      ✉️ john.lerma4444@gmail.com
+    </a>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2026 JL Vela Apps · Independent developer</p>
+  <div class="footer-links">
+    <a href="#apps">Apps</a>
+    <a href="https://presli.app">Presli</a>
+    <a href="mailto:john.lerma4444@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
