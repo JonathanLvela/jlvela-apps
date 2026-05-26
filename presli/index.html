@@ -101,86 +101,40 @@
     }
     .hero-trust-dot { width: 4px; height: 4px; background: var(--border); border-radius: 50%; }
 
-    /* ── PHONE MOCKUP ────────────────────────────────────────────── */
+    /* ── PHONE SCREENSHOT ───────────────────────────────────────── */
     .phone-wrap {
       display: flex; justify-content: center; align-items: center;
       position: relative;
     }
     .phone-glow {
-      position: absolute; width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(229,62,62,0.18) 0%, transparent 70%);
+      position: absolute; width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(229,62,62,0.15) 0%, transparent 70%);
       top: 50%; left: 50%; transform: translate(-50%, -50%);
       border-radius: 50%; pointer-events: none;
     }
-    .phone {
-      width: 240px; height: 490px;
-      background: #111; border-radius: 40px;
-      border: 2px solid rgba(255,255,255,0.1);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04);
-      overflow: hidden; position: relative;
-      display: flex; flex-direction: column;
+    .phone-screenshot {
+      width: 280px; border-radius: 44px; display: block;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.30), 0 0 0 1px rgba(0,0,0,0.06);
     }
-    .phone-notch {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 90px; height: 24px; background: #111;
-      border-radius: 0 0 16px 16px; z-index: 10;
+
+    /* ── SCREENSHOTS SECTION ─────────────────────────────────────── */
+    .screenshots-section { background: #F7F8FC; padding: 80px 0 80px 28px; overflow: hidden; }
+    .screenshots-inner { max-width: 1100px; margin: 0 auto 0 auto; }
+    .screenshots-scroll {
+      display: flex; gap: 20px; overflow-x: auto; padding: 8px 28px 20px 0;
+      scrollbar-width: none; -ms-overflow-style: none;
+      scroll-snap-type: x mandatory;
     }
-    .phone-status {
-      height: 44px; background: #1a1a2e;
-      display: flex; align-items: flex-end; justify-content: space-between;
-      padding: 0 18px 6px; flex-shrink: 0;
+    .screenshots-scroll::-webkit-scrollbar { display: none; }
+    .screenshot-item { flex-shrink: 0; scroll-snap-align: start; }
+    .screenshot-item img {
+      width: 190px; border-radius: 36px; display: block;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
     }
-    .phone-status-time { font-size: 11px; font-weight: 700; color: #fff; }
-    .phone-status-icons { display: flex; gap: 4px; align-items: center; }
-    .phone-status-icons span { font-size: 10px; color: rgba(255,255,255,0.8); }
-    .phone-screen {
-      flex: 1; background: #1a1a2e; overflow: hidden;
-      display: flex; flex-direction: column; padding: 12px;
-      gap: 8px;
+    .screenshot-label {
+      text-align: center; font-size: 13px; font-weight: 600;
+      color: var(--muted); margin-top: 10px;
     }
-    .phone-header {
-      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5);
-      letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 0;
-    }
-    .phone-bp-card {
-      background: linear-gradient(135deg, #C53030, #E53E3E);
-      border-radius: 16px; padding: 14px; color: #fff;
-    }
-    .phone-bp-label { font-size: 9px; font-weight: 600; opacity: 0.8; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
-    .phone-bp-value { font-size: 28px; font-weight: 900; letter-spacing: -1px; line-height: 1; }
-    .phone-bp-unit { font-size: 10px; opacity: 0.7; margin-top: 2px; }
-    .phone-bp-badge {
-      display: inline-block; background: rgba(255,255,255,0.2); border-radius: 6px;
-      font-size: 9px; font-weight: 700; padding: 2px 7px; margin-top: 6px;
-    }
-    .phone-mini-row { display: flex; gap: 6px; }
-    .phone-mini {
-      flex: 1; background: rgba(255,255,255,0.05); border-radius: 12px;
-      padding: 10px; border: 1px solid rgba(255,255,255,0.08);
-    }
-    .phone-mini-icon { font-size: 14px; margin-bottom: 4px; }
-    .phone-mini-val { font-size: 14px; font-weight: 800; color: #fff; }
-    .phone-mini-lbl { font-size: 9px; color: rgba(255,255,255,0.45); margin-top: 1px; }
-    .phone-chart {
-      background: rgba(255,255,255,0.04); border-radius: 12px;
-      padding: 10px; border: 1px solid rgba(255,255,255,0.06);
-      flex: 1;
-    }
-    .phone-chart-label { font-size: 9px; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
-    .phone-chart-bars { display: flex; gap: 4px; align-items: flex-end; height: 38px; }
-    .phone-bar {
-      flex: 1; border-radius: 3px 3px 0 0;
-      background: rgba(229,62,62,0.5);
-    }
-    .phone-bar.hi { background: rgba(229,62,62,0.85); }
-    .phone-nav {
-      height: 56px; background: #111; border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex; align-items: center; justify-content: space-around;
-      flex-shrink: 0;
-    }
-    .phone-nav-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-    .phone-nav-icon { font-size: 16px; }
-    .phone-nav-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--red); }
 
     /* ── FEATURES SECTION ───────────────────────────────────────── */
     .section { max-width: 1100px; margin: 0 auto; padding: 80px 28px; }
@@ -411,70 +365,42 @@
     </div>
   </div>
 
-  <!-- Phone mockup -->
+  <!-- App screenshot -->
   <div class="phone-wrap">
     <div class="phone-glow"></div>
-    <div class="phone">
-      <div class="phone-notch"></div>
-      <div class="phone-status">
-        <span class="phone-status-time">9:41</span>
-        <div class="phone-status-icons">
-          <span>●●●</span>
-          <span>WiFi</span>
-          <span>▇</span>
-        </div>
+    <img class="phone-screenshot" src="screenshot-home.png" alt="Presli home screen showing blood pressure 119/76" />
+  </div>
+</div>
+
+<!-- ── SCREENSHOTS ────────────────────────────────────────────────────── -->
+<div class="screenshots-section">
+  <div class="screenshots-inner">
+    <div class="section-label" style="padding-left:0; margin-bottom:12px;">See every screen</div>
+    <div class="section-title" style="font-size:clamp(22px,2.5vw,32px); margin-bottom:32px;">Everything in one app</div>
+    <div class="screenshots-scroll">
+      <div class="screenshot-item">
+        <img src="screenshot-home.png" alt="Home tab" />
+        <div class="screenshot-label">Home</div>
       </div>
-      <div class="phone-screen">
-        <div class="phone-header">Today's Reading</div>
-        <!-- BP Card -->
-        <div class="phone-bp-card">
-          <div class="phone-bp-label">Blood Pressure</div>
-          <div class="phone-bp-value">119/76</div>
-          <div class="phone-bp-unit">mmHg · 8:30 AM</div>
-          <div class="phone-bp-badge">Within normal range</div>
-        </div>
-        <!-- Mini stats -->
-        <div class="phone-mini-row">
-          <div class="phone-mini">
-            <div class="phone-mini-icon">💓</div>
-            <div class="phone-mini-val">63</div>
-            <div class="phone-mini-lbl">Heart Rate</div>
-          </div>
-          <div class="phone-mini">
-            <div class="phone-mini-icon">⚖️</div>
-            <div class="phone-mini-val">181</div>
-            <div class="phone-mini-lbl">Weight lbs</div>
-          </div>
-          <div class="phone-mini">
-            <div class="phone-mini-icon">😴</div>
-            <div class="phone-mini-val">8.0h</div>
-            <div class="phone-mini-lbl">Sleep</div>
-          </div>
-        </div>
-        <!-- Chart -->
-        <div class="phone-chart">
-          <div class="phone-chart-label">7-Day Systolic Trend</div>
-          <div class="phone-chart-bars">
-            <div class="phone-bar" style="height:55%"></div>
-            <div class="phone-bar" style="height:65%"></div>
-            <div class="phone-bar hi" style="height:80%"></div>
-            <div class="phone-bar" style="height:60%"></div>
-            <div class="phone-bar" style="height:58%"></div>
-            <div class="phone-bar" style="height:50%"></div>
-            <div class="phone-bar hi" style="height:72%"></div>
-          </div>
-        </div>
+      <div class="screenshot-item">
+        <img src="screenshot-stats.png" alt="Stats tab" />
+        <div class="screenshot-label">Stats</div>
       </div>
-      <!-- Bottom nav -->
-      <div class="phone-nav">
-        <div class="phone-nav-item">
-          <span class="phone-nav-icon">🏠</span>
-          <div class="phone-nav-dot"></div>
-        </div>
-        <div class="phone-nav-item"><span class="phone-nav-icon">📊</span></div>
-        <div class="phone-nav-item"><span class="phone-nav-icon">📅</span></div>
-        <div class="phone-nav-item"><span class="phone-nav-icon">💊</span></div>
-        <div class="phone-nav-item"><span class="phone-nav-icon">⚙️</span></div>
+      <div class="screenshot-item">
+        <img src="screenshot-calendar.png" alt="Calendar tab" />
+        <div class="screenshot-label">Calendar</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshot-meds.png" alt="Medications tab" />
+        <div class="screenshot-label">Medications</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshot-doctor.png" alt="Doctor prep view" />
+        <div class="screenshot-label">Doctor Prep</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="screenshot-report.png" alt="PDF health report" />
+        <div class="screenshot-label">PDF Report</div>
       </div>
     </div>
   </div>
