@@ -1,0 +1,23 @@
+# No build step — pure static HTML
+[build]
+  publish = "."
+
+# Clean URLs: /support → /support.html etc.
+[[redirects]]
+  from   = "/support"
+  to     = "/support.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
