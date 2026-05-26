@@ -11,13 +11,13 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink:          #0D0D1A;
-      --bg:           #F7F6FF;
-      --card:         #FFFFFF;
-      --muted:        #6B7280;
-      --border:       rgba(13,13,26,0.08);
-      --accent:       #6366F1;
-      --accent-dark:  #4F46E5;
+      --ink:         #0D0D1A;
+      --bg:          #F7F6FF;
+      --card:        #FFFFFF;
+      --muted:       #6B7280;
+      --border:      rgba(13,13,26,0.08);
+      --accent:      #6366F1;
+      --accent-dark: #4F46E5;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
@@ -25,29 +25,29 @@
     /* ── NAV ──────────────────────────────────────────────────── */
     .nav-wrap {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(13,13,26,0.96); backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: rgba(13,13,26,0.97); backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav-inner {
       max-width: 1020px; margin: 0 auto; padding: 0 28px;
       height: 62px; display: flex; align-items: center; justify-content: space-between;
     }
     .nav-logo {
-      font-size: 17px; font-weight: 900; color: #fff;
-      text-decoration: none; letter-spacing: -0.3px;
+      font-size: 16px; font-weight: 900; color: #fff;
+      text-decoration: none; letter-spacing: -0.2px;
       display: flex; align-items: center; gap: 10px;
     }
     .nav-logo-mark {
-      width: 32px; height: 32px; border-radius: 9px;
+      width: 30px; height: 30px; border-radius: 8px;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 900; color: #fff;
+      font-size: 12px; font-weight: 900; color: #fff; letter-spacing: 0;
     }
     .nav-links { display: flex; align-items: center; gap: 2px; }
     .nav-links a {
-      font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.45);
-      text-decoration: none; padding: 6px 12px; border-radius: 8px;
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.4);
+      text-decoration: none; padding: 6px 11px; border-radius: 7px;
       transition: color 0.15s, background 0.15s;
     }
     .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
@@ -55,158 +55,244 @@
     /* ── HERO ─────────────────────────────────────────────────── */
     .hero {
       background: var(--ink);
-      padding: 100px 28px 88px;
+      padding: 110px 28px 100px;
       text-align: center;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute;
-      top: -80px; left: 50%; transform: translateX(-50%);
-      width: 700px; height: 500px;
-      background: radial-gradient(ellipse at center, rgba(99,102,241,0.14) 0%, transparent 70%);
+    /* subtle dot grid */
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
       pointer-events: none;
     }
-    .hero-inner { max-width: 580px; margin: 0 auto; position: relative; }
+    /* indigo glow */
+    .hero::before {
+      content: ''; position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 560px;
+      background: radial-gradient(ellipse at center top, rgba(99,102,241,0.22) 0%, transparent 68%);
+      pointer-events: none; z-index: 1;
+    }
+    .hero-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 2; }
+    .hero-kicker {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(165,180,252,0.7);
+      margin-bottom: 24px;
+    }
     .hero h1 {
-      font-size: clamp(40px, 6vw, 66px); font-weight: 900;
-      letter-spacing: -2.5px; line-height: 1.04;
-      color: #fff; margin-bottom: 20px;
+      font-size: clamp(44px, 6.5vw, 72px); font-weight: 900;
+      letter-spacing: -2.5px; line-height: 1.02;
+      color: #fff; margin-bottom: 22px;
     }
     .hero h1 em { font-style: normal; color: #a5b4fc; }
     .hero-sub {
-      font-size: 17px; color: rgba(255,255,255,0.45);
-      line-height: 1.75; max-width: 420px; margin: 0 auto;
+      font-size: 17px; color: rgba(255,255,255,0.4);
+      line-height: 1.8; max-width: 400px; margin: 0 auto 40px;
+    }
+    .hero-scroll {
+      display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.2); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+    }
+    .hero-scroll svg { animation: bounce 2s ease-in-out infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(4px); }
     }
 
     /* ── APPS ─────────────────────────────────────────────────── */
     .apps-wrap {
-      max-width: 1020px; margin: 0 auto; padding: 72px 28px 80px;
+      max-width: 1020px; margin: 0 auto; padding: 80px 28px 88px;
     }
-    .section-eyebrow {
-      font-size: 12px; font-weight: 700; color: var(--accent);
-      letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 32px;
+    .apps-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 36px; border-bottom: 1px solid var(--border); padding-bottom: 18px;
     }
-    .apps-list { display: flex; flex-direction: column; gap: 20px; }
+    .apps-header-title { font-size: 13px; font-weight: 700; color: var(--ink); }
+    .apps-header-count { font-size: 12px; color: var(--muted); }
+    .apps-list { display: flex; flex-direction: column; gap: 16px; }
 
     /* ── APP CARD ─────────────────────────────────────────────── */
     .app-card {
-      background: var(--card); border-radius: 22px;
+      background: var(--card);
+      border-radius: 20px;
       border: 1px solid var(--border);
-      padding: 28px 32px;
-      display: grid; grid-template-columns: auto 1fr auto;
-      align-items: center; gap: 24px;
-      transition: box-shadow 0.2s, transform 0.2s;
+      padding: 26px 28px 26px 0;
+      display: grid; grid-template-columns: 6px auto 1fr auto;
+      align-items: center; gap: 0;
+      overflow: hidden;
+      transition: box-shadow 0.22s, transform 0.22s;
+      text-decoration: none; color: inherit;
     }
     .app-card:hover {
-      box-shadow: 0 8px 36px rgba(13,13,26,0.09);
+      box-shadow: 0 10px 40px rgba(13,13,26,0.10);
       transform: translateY(-2px);
     }
+    .app-card-accent {
+      align-self: stretch; border-radius: 20px 0 0 20px;
+      flex-shrink: 0; margin-right: 28px;
+    }
     .app-icon {
-      width: 68px; height: 68px; border-radius: 18px;
+      width: 64px; height: 64px; border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 32px; flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+      font-size: 30px; flex-shrink: 0; margin-right: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
     .app-body { min-width: 0; }
     .app-name {
-      font-size: 20px; font-weight: 900; letter-spacing: -0.4px; margin-bottom: 2px;
+      font-size: 18px; font-weight: 900; letter-spacing: -0.3px; margin-bottom: 3px;
     }
     .app-tagline {
-      font-size: 14px; color: var(--muted); margin-bottom: 10px;
+      font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 10px;
+      max-width: 420px;
     }
-    .app-platforms { display: flex; gap: 6px; }
+    .app-platforms { display: flex; gap: 5px; }
     .platform-badge {
-      font-size: 11px; font-weight: 600; color: var(--muted);
-      padding: 3px 8px; border-radius: 6px; border: 1px solid var(--border);
+      font-size: 10px; font-weight: 700; color: var(--muted);
+      padding: 2px 8px; border-radius: 5px; border: 1px solid var(--border);
+      letter-spacing: 0.03em;
     }
     .app-actions {
-      display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: flex-end;
+      gap: 8px; flex-shrink: 0; padding-left: 24px;
     }
     .btn-primary {
-      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-      font-size: 13px; font-weight: 700; padding: 10px 20px;
-      border-radius: 11px; text-decoration: none; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; padding: 10px 18px;
+      border-radius: 10px; text-decoration: none; white-space: nowrap;
       transition: opacity 0.2s;
     }
-    .btn-primary:hover { opacity: 0.85; }
-    .btn-store-row { display: flex; gap: 8px; }
+    .btn-primary:hover { opacity: 0.87; }
+    .btn-store-row { display: flex; gap: 7px; }
     .btn-store-sm {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; font-weight: 600; padding: 8px 14px;
-      border-radius: 9px; text-decoration: none; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 600; padding: 7px 12px;
+      border-radius: 8px; text-decoration: none; white-space: nowrap;
       border: 1px solid var(--border); color: var(--muted);
-      transition: color 0.15s, border-color 0.15s;
+      background: var(--bg);
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
     }
-    .btn-store-sm:hover { color: var(--ink); border-color: rgba(13,13,26,0.2); }
+    .btn-store-sm:hover {
+      color: var(--ink); border-color: rgba(13,13,26,0.18);
+      background: #fff;
+    }
 
     /* ── ABOUT ────────────────────────────────────────────────── */
     .about-wrap {
-      background: var(--ink); padding: 72px 28px;
+      background: var(--ink); padding: 80px 28px 88px;
+      position: relative; overflow: hidden;
     }
-    .about-inner {
-      max-width: 1020px; margin: 0 auto;
+    .about-wrap::before {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .about-top {
-      max-width: 540px; margin-bottom: 48px;
-    }
-    .about-eyebrow {
-      font-size: 12px; font-weight: 700; color: #a5b4fc;
-      letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 14px;
+    .about-inner { max-width: 1020px; margin: 0 auto; position: relative; }
+    .about-header { margin-bottom: 56px; }
+    .about-kicker {
+      font-size: 12px; font-weight: 700; color: rgba(165,180,252,0.6);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;
     }
     .about-title {
-      font-size: clamp(26px, 3.5vw, 38px); font-weight: 900;
-      color: #fff; letter-spacing: -1px; line-height: 1.15;
+      font-size: clamp(28px, 3.5vw, 40px); font-weight: 900;
+      color: #fff; letter-spacing: -1px; line-height: 1.12;
+      max-width: 560px;
     }
-    .about-points {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    .about-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
     .about-point {
-      padding: 24px; border-radius: 16px;
-      transition: background 0.2s;
+      padding: 32px 28px 32px 0;
+      border-right: 1px solid rgba(255,255,255,0.06);
     }
-    .about-point:hover { background: rgba(255,255,255,0.04); }
-    .about-point-icon { font-size: 24px; margin-bottom: 12px; }
+    .about-point:last-child { border-right: none; padding-right: 0; }
+    .about-point:first-child { padding-left: 0; }
+    .about-point + .about-point { padding-left: 28px; }
+    .about-point-num {
+      font-size: 11px; font-weight: 800; color: rgba(99,102,241,0.5);
+      letter-spacing: 0.05em; margin-bottom: 16px;
+    }
     .about-point-title {
-      font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px;
+      font-size: 15px; font-weight: 800; color: #fff;
+      margin-bottom: 8px; letter-spacing: -0.2px;
     }
-    .about-point-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+    .about-point-desc {
+      font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.65;
+    }
+
+    /* ── CONTACT STRIP ───────────────────────────────────────── */
+    .contact-strip {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 36px 28px;
+    }
+    .contact-inner {
+      max-width: 1020px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .contact-text { font-size: 15px; color: rgba(255,255,255,0.35); }
+    .contact-text strong { color: rgba(255,255,255,0.7); font-weight: 700; }
+    .btn-contact {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700;
+      padding: 10px 20px; border-radius: 10px; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.65);
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .btn-contact:hover {
+      border-color: rgba(255,255,255,0.25); color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
 
     /* ── FOOTER ───────────────────────────────────────────────── */
     footer {
-      background: var(--ink);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 28px 28px;
+      background: rgba(7,7,14,0.98);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 22px 28px;
     }
     .footer-inner {
       max-width: 1020px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
+      flex-wrap: wrap; gap: 10px;
     }
-    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.25); }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .footer-links a {
-      font-size: 13px; color: rgba(255,255,255,0.3);
+      font-size: 12px; color: rgba(255,255,255,0.25);
       text-decoration: none; transition: color 0.15s;
     }
-    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-links a:hover { color: rgba(255,255,255,0.65); }
 
     /* ── RESPONSIVE ───────────────────────────────────────────── */
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       .app-card {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 6px auto 1fr;
         grid-template-rows: auto auto;
+        padding-bottom: 20px;
       }
       .app-actions {
-        grid-column: 1 / -1;
-        flex-direction: row; flex-wrap: wrap;
+        grid-column: 2 / -1; grid-row: 2;
+        align-items: flex-start; flex-direction: row; flex-wrap: wrap;
+        padding-left: 0; margin-left: 84px; padding-top: 16px;
+        border-top: 1px solid var(--border); margin-top: 4px;
       }
-      .about-points { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .about-point { border-right: none; padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .about-point:last-child { border-bottom: none; }
+      .about-point + .about-point { padding-left: 0; }
+    }
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 480px) {
-      .about-points { grid-template-columns: 1fr; }
-      .btn-store-row { flex-wrap: wrap; }
+      .contact-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -222,7 +308,7 @@
     <div class="nav-links">
       <a href="#apps">Apps</a>
       <a href="#about">About</a>
-      <a href="mailto:john.lerma4444@gmail.com">Contact</a>
+      <a href="mailto:support@jlvela.app">Contact</a>
     </div>
   </div>
 </nav>
@@ -230,46 +316,57 @@
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
 <div class="hero">
   <div class="hero-inner">
+    <div class="hero-kicker">Independent developer</div>
     <h1>Apps built<br>with <em>care.</em></h1>
-    <p class="hero-sub">Simple, focused tools for everyday life — no accounts, no cloud, no subscription traps.</p>
+    <p class="hero-sub">Simple, focused tools for everyday life — private by design, useful by default.</p>
+    <a class="hero-scroll" href="#apps">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
   </div>
 </div>
 
 <!-- ── APPS ─────────────────────────────────────────────────────────── -->
 <div class="apps-wrap" id="apps">
-  <div class="section-eyebrow">Available now</div>
+  <div class="apps-header">
+    <span class="apps-header-title">Apps</span>
+    <span class="apps-header-count">1 app · iOS &amp; Android</span>
+  </div>
   <div class="apps-list">
 
     <!-- PRESLI -->
-    <div class="app-card">
+    <a class="app-card" href="/presli/">
+      <div class="app-card-accent" style="background: linear-gradient(180deg, #C53030, #E53E3E);"></div>
       <div class="app-icon" style="background: linear-gradient(135deg, #C53030, #E53E3E);">❤️</div>
       <div class="app-body">
         <div class="app-name">Presli</div>
-        <div class="app-tagline">Blood pressure, weight, heart rate, sleep, medications — all on your device.</div>
+        <div class="app-tagline">Blood pressure, weight, heart rate, sleep &amp; medications — all on your device.</div>
         <div class="app-platforms">
           <span class="platform-badge">iOS</span>
           <span class="platform-badge">Android</span>
         </div>
       </div>
       <div class="app-actions">
-        <a href="/presli/" class="btn-primary" style="background: linear-gradient(135deg,#C53030,#E53E3E); color:#fff;">
+        <span class="btn-primary" style="background: linear-gradient(135deg,#C53030,#E53E3E); color:#fff;">
           Learn more →
-        </a>
+        </span>
         <div class="btn-store-row">
-          <a href="https://apps.apple.com" class="btn-store-sm">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="btn-store-sm">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             App Store
-          </a>
-          <a href="https://play.google.com" class="btn-store-sm">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.21.8.21 1.18 0l11.38-6.58-2.46-2.46-10.1 9.04zm15.6-9.02L5.88 7.82 3.18.24C2.8.03 2.38.04 2 .26v23.48c.38.22.8.21 1.18 0l15.6-9.0zm1.04-5.42L16.74 7.5l-2.46 2.46 2.46 2.46 3.08-1.78c.88-.51.88-1.37 0-1.82z"/></svg>
+          </span>
+          <span class="btn-store-sm">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.21.8.21 1.18 0l11.38-6.58-2.46-2.46-10.1 9.04zm15.6-9.02L5.88 7.82 3.18.24C2.8.03 2.38.04 2 .26v23.48c.38.22.8.21 1.18 0l15.6-9.0zm1.04-5.42L16.74 7.5l-2.46 2.46 2.46 2.46 3.08-1.78c.88-.51.88-1.37 0-1.82z"/></svg>
             Google Play
-          </a>
+          </span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <!-- ADD NEXT APP HERE
-    <div class="app-card">
+    <!-- ADD NEXT APP:
+    <a class="app-card" href="/bomovi/">
+      <div class="app-card-accent" style="background: linear-gradient(180deg, #1565C0, #1E88E5);"></div>
       <div class="app-icon" style="background: linear-gradient(135deg, #1565C0, #1E88E5);">🚽</div>
       <div class="app-body">
         <div class="app-name">Bomovi</div>
@@ -280,15 +377,13 @@
         </div>
       </div>
       <div class="app-actions">
-        <a href="/bomovi/" class="btn-primary" style="background: linear-gradient(135deg,#1565C0,#1E88E5); color:#fff;">
-          Learn more →
-        </a>
+        <span class="btn-primary" style="background: linear-gradient(135deg,#1565C0,#1E88E5); color:#fff;">Learn more →</span>
         <div class="btn-store-row">
-          <a href="https://apps.apple.com" class="btn-store-sm">App Store</a>
-          <a href="https://play.google.com" class="btn-store-sm">Google Play</a>
+          <span class="btn-store-sm">App Store</span>
+          <span class="btn-store-sm">Google Play</span>
         </div>
       </div>
-    </div>
+    </a>
     -->
 
   </div>
@@ -297,32 +392,42 @@
 <!-- ── ABOUT ─────────────────────────────────────────────────────────── -->
 <div class="about-wrap" id="about">
   <div class="about-inner">
-    <div class="about-top">
-      <div class="about-eyebrow">The approach</div>
+    <div class="about-header">
+      <div class="about-kicker">The approach</div>
       <h2 class="about-title">Software that earns its place on your phone.</h2>
     </div>
-    <div class="about-points">
+    <div class="about-grid">
       <div class="about-point">
-        <div class="about-point-icon">🔒</div>
+        <div class="about-point-num">01</div>
         <div class="about-point-title">Your data, your device</div>
-        <p class="about-point-desc">All data stays local. No servers, no accounts, no way for us to see it.</p>
+        <p class="about-point-desc">All data stays local. No servers, no accounts, no way for us to see it — ever.</p>
       </div>
       <div class="about-point">
-        <div class="about-point-icon">💳</div>
+        <div class="about-point-num">02</div>
         <div class="about-point-title">Pay once, own it</div>
-        <p class="about-point-desc">Premium is a one-time purchase. No subscriptions, no recurring charges.</p>
+        <p class="about-point-desc">Premium is a one-time purchase. No subscriptions, no recurring charges, no surprises.</p>
       </div>
       <div class="about-point">
-        <div class="about-point-icon">🎯</div>
+        <div class="about-point-num">03</div>
         <div class="about-point-title">Focused, not bloated</div>
-        <p class="about-point-desc">Each app does one thing well. No feature creep, no filler, no onboarding walls.</p>
+        <p class="about-point-desc">Each app does one thing well. No feature creep, no filler, no dark patterns.</p>
       </div>
       <div class="about-point">
-        <div class="about-point-icon">🌍</div>
+        <div class="about-point-num">04</div>
         <div class="about-point-title">Free core, always</div>
-        <p class="about-point-desc">The app works fully for free. Premium adds extras — it never locks the basics.</p>
+        <p class="about-point-desc">The essentials are always free. Premium adds extras — it never locks the basics.</p>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────────── -->
+<div class="contact-strip">
+  <div class="contact-inner">
+    <p class="contact-text"><strong>Questions or feedback?</strong> I read every message.</p>
+    <a href="mailto:support@jlvela.app" class="btn-contact">
+      ✉ support@jlvela.app
+    </a>
   </div>
 </div>
 
@@ -332,8 +437,8 @@
     <span class="footer-copy">© 2026 JL Vela Apps</span>
     <div class="footer-links">
       <a href="/presli/">Presli</a>
+      <a href="/presli/support.html">Support</a>
       <a href="/presli/privacy.html">Privacy</a>
-      <a href="mailto:john.lerma4444@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
