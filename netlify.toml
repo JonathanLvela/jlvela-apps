@@ -5,22 +5,22 @@
 # Clean URLs
 [[redirects]]
   from   = "/presli"
-  to     = "/presli/"
+  to     = "/preslia/"
   status = 301
 
 [[redirects]]
-  from   = "/presli/support"
-  to     = "/presli/support.html"
+  from   = "/preslia/support"
+  to     = "/preslia/support.html"
   status = 200
 
 [[redirects]]
-  from   = "/presli/privacy"
-  to     = "/presli/privacy.html"
+  from   = "/preslia/privacy"
+  to     = "/preslia/privacy.html"
   status = 200
 
 [[redirects]]
-  from   = "/presli/terms"
-  to     = "/presli/terms.html"
+  from   = "/preslia/terms"
+  to     = "/preslia/terms.html"
   status = 200
 
 # Security headers
