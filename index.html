@@ -51,6 +51,14 @@
       transition: color 0.15s, background 0.15s;
     }
     .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+    .lang-toggle {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      background: transparent; border: 1.5px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.4); padding: 4px 9px; border-radius: 7px;
+      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+      margin-left: 4px;
+    }
+    .lang-toggle:hover { border-color: rgba(165,180,252,0.5); color: #a5b4fc; }
 
     /* ── HERO ─────────────────────────────────────────────────── */
     .hero {
@@ -59,7 +67,6 @@
       text-align: center;
       position: relative; overflow: hidden;
     }
-    /* subtle dot grid */
     .hero::after {
       content: '';
       position: absolute; inset: 0;
@@ -67,7 +74,6 @@
       background-size: 28px 28px;
       pointer-events: none;
     }
-    /* indigo glow */
     .hero::before {
       content: ''; position: absolute;
       top: -60px; left: 50%; transform: translateX(-50%);
@@ -306,9 +312,10 @@
       JL Vela Apps
     </a>
     <div class="nav-links">
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
-      <a href="mailto:support@jlvela.app">Contact</a>
+      <a href="#apps" data-i18n="nav-apps">Apps</a>
+      <a href="#about" data-i18n="nav-about">About</a>
+      <a href="mailto:support@jlvela.app" data-i18n="nav-contact">Contact</a>
+      <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">ES</button>
     </div>
   </div>
 </nav>
@@ -316,9 +323,9 @@
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-kicker">Independent developer</div>
-    <h1>Apps built<br>with <em>purpose.</em></h1>
-    <p class="hero-sub">I only build apps I genuinely want to use — tools that solve real problems in my own life.</p>
+    <div class="hero-kicker" data-i18n="hero-kicker">Independent developer</div>
+    <h1 data-i18n="hero-h1">Apps built<br>with <em>purpose.</em></h1>
+    <p class="hero-sub" data-i18n="hero-sub">I only build apps I genuinely want to use — tools that solve real problems in my own life.</p>
     <a class="hero-scroll" href="#apps">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
         <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -330,25 +337,25 @@
 <!-- ── APPS ─────────────────────────────────────────────────────────── -->
 <div class="apps-wrap" id="apps">
   <div class="apps-header">
-    <span class="apps-header-title">Apps</span>
-    <span class="apps-header-count">1 app · iOS &amp; Android</span>
+    <span class="apps-header-title" data-i18n="apps-title">Apps</span>
+    <span class="apps-header-count" data-i18n="apps-count">1 app · iOS &amp; Android</span>
   </div>
   <div class="apps-list">
 
-    <!-- PRESLI -->
+    <!-- PRESLIA -->
     <a class="app-card" href="/preslia/">
       <div class="app-card-accent" style="background: linear-gradient(180deg, #1E5799, #2D80C8);"></div>
       <img src="preslia/logo.png" alt="Preslia" style="width:64px;height:64px;border-radius:16px;flex-shrink:0;margin-right:20px;box-shadow:0 3px 12px rgba(0,0,0,0.15);display:block;object-fit:cover;" />
       <div class="app-body">
         <div class="app-name">Preslia</div>
-        <div class="app-tagline">Blood pressure, weight, heart rate, sleep &amp; medications — all on your device.</div>
+        <div class="app-tagline" data-i18n="preslia-tagline">Blood pressure, weight, heart rate, sleep &amp; medications — all on your device.</div>
         <div class="app-platforms">
           <span class="platform-badge">iOS</span>
           <span class="platform-badge">Android</span>
         </div>
       </div>
       <div class="app-actions">
-        <span class="btn-primary" style="background: linear-gradient(135deg,#C53030,#E53E3E); color:#fff;">
+        <span class="btn-primary" style="background: linear-gradient(135deg,#C53030,#E53E3E); color:#fff;" data-i18n="preslia-cta">
           Learn more →
         </span>
         <div class="btn-store-row">
@@ -393,28 +400,28 @@
 <div class="about-wrap" id="about">
   <div class="about-inner">
     <div class="about-header">
-      <h2 class="about-title">What every app is built on.</h2>
+      <h2 class="about-title" data-i18n="about-title">What every app is built on.</h2>
     </div>
     <div class="about-grid">
       <div class="about-point">
         <div class="about-point-num">01</div>
-        <div class="about-point-title">Your data, always yours</div>
-        <p class="about-point-desc">Stored on your device. Never uploaded, shared, or used to target you without your explicit action.</p>
+        <div class="about-point-title" data-i18n="p1-title">Your data, always yours</div>
+        <p class="about-point-desc" data-i18n="p1-desc">Stored on your device. Never uploaded, shared, or used to target you without your explicit action.</p>
       </div>
       <div class="about-point">
         <div class="about-point-num">02</div>
-        <div class="about-point-title">Premium adds, never restricts</div>
-        <p class="about-point-desc">Every core feature is free, forever. Premium unlocks more — it never takes anything away.</p>
+        <div class="about-point-title" data-i18n="p2-title">Premium adds, never restricts</div>
+        <p class="about-point-desc" data-i18n="p2-desc">Every core feature is free, forever. Premium unlocks more — it never takes anything away.</p>
       </div>
       <div class="about-point">
         <div class="about-point-num">03</div>
-        <div class="about-point-title">No ads. Ever.</div>
-        <p class="about-point-desc">The app is the product. Your attention and behavior are not for sale — no ad networks, no trackers.</p>
+        <div class="about-point-title" data-i18n="p3-title">No ads. Ever.</div>
+        <p class="about-point-desc" data-i18n="p3-desc">The app is the product. Your attention and behavior are not for sale — no ad networks, no trackers.</p>
       </div>
       <div class="about-point">
         <div class="about-point-num">04</div>
-        <div class="about-point-title">Built to get out of your way</div>
-        <p class="about-point-desc">Open it, do the thing, move on. Quick to learn, quick to use — no unnecessary steps between you and what you need.</p>
+        <div class="about-point-title" data-i18n="p4-title">Built to get out of your way</div>
+        <p class="about-point-desc" data-i18n="p4-desc">Open it, do the thing, move on. Quick to learn, quick to use — no unnecessary steps between you and what you need.</p>
       </div>
     </div>
   </div>
@@ -423,7 +430,7 @@
 <!-- ── CONTACT ────────────────────────────────────────────────────────── -->
 <div class="contact-strip">
   <div class="contact-inner">
-    <p class="contact-text"><strong>Questions or feedback?</strong> We'd love to hear from you.</p>
+    <p class="contact-text" data-i18n="contact-text"><strong>Questions or feedback?</strong> We'd love to hear from you.</p>
     <a href="mailto:support@jlvela.app" class="btn-contact">
       ✉ support@jlvela.app
     </a>
@@ -436,11 +443,88 @@
     <span class="footer-copy">© 2026 JL Vela Apps</span>
     <div class="footer-links">
       <a href="/preslia/">Preslia</a>
-      <a href="/preslia/support.html">Support</a>
-      <a href="/preslia/privacy.html">Privacy</a>
+      <a href="/preslia/support.html" data-i18n="footer-support">Support</a>
+      <a href="/preslia/privacy.html" data-i18n="footer-privacy">Privacy</a>
     </div>
   </div>
 </footer>
+
+<script>
+  const i18n = {
+    en: {
+      'nav-apps': 'Apps',
+      'nav-about': 'About',
+      'nav-contact': 'Contact',
+      'hero-kicker': 'Independent developer',
+      'hero-h1': 'Apps built<br>with <em>purpose.</em>',
+      'hero-sub': 'I only build apps I genuinely want to use — tools that solve real problems in my own life.',
+      'apps-title': 'Apps',
+      'apps-count': '1 app · iOS &amp; Android',
+      'preslia-tagline': 'Blood pressure, weight, heart rate, sleep &amp; medications — all on your device.',
+      'preslia-cta': 'Learn more →',
+      'about-title': 'What every app is built on.',
+      'p1-title': 'Your data, always yours',
+      'p1-desc': 'Stored on your device. Never uploaded, shared, or used to target you without your explicit action.',
+      'p2-title': 'Premium adds, never restricts',
+      'p2-desc': 'Every core feature is free, forever. Premium unlocks more — it never takes anything away.',
+      'p3-title': 'No ads. Ever.',
+      'p3-desc': 'The app is the product. Your attention and behavior are not for sale — no ad networks, no trackers.',
+      'p4-title': 'Built to get out of your way',
+      'p4-desc': 'Open it, do the thing, move on. Quick to learn, quick to use — no unnecessary steps between you and what you need.',
+      'contact-text': "<strong>Questions or feedback?</strong> We'd love to hear from you.",
+      'footer-support': 'Support',
+      'footer-privacy': 'Privacy',
+    },
+    es: {
+      'nav-apps': 'Apps',
+      'nav-about': 'Acerca',
+      'nav-contact': 'Contacto',
+      'hero-kicker': 'Desarrollador independiente',
+      'hero-h1': 'Apps creadas<br>con <em>propósito.</em>',
+      'hero-sub': 'Solo creo apps que genuinamente quiero usar — herramientas que resuelven problemas reales en mi propia vida.',
+      'apps-title': 'Apps',
+      'apps-count': '1 app · iOS y Android',
+      'preslia-tagline': 'Presión arterial, peso, ritmo cardíaco, sueño y medicamentos — todo en tu dispositivo.',
+      'preslia-cta': 'Ver más →',
+      'about-title': 'En qué se basa cada app.',
+      'p1-title': 'Tus datos, siempre tuyos',
+      'p1-desc': 'Almacenados en tu dispositivo. Nunca subidos, compartidos ni usados para dirigirte publicidad sin tu acción explícita.',
+      'p2-title': 'Premium suma, nunca resta',
+      'p2-desc': 'Cada función principal es gratuita, para siempre. Premium desbloquea más — nunca quita nada.',
+      'p3-title': 'Sin publicidad. Jamás.',
+      'p3-desc': 'La app es el producto. Tu atención y comportamiento no están en venta — sin redes publicitarias, sin rastreadores.',
+      'p4-title': 'Diseñada para no estorbarte',
+      'p4-desc': 'Ábrela, haz lo que necesitas, sigue adelante. Fácil de aprender, rápida de usar — sin pasos innecesarios entre tú y lo que necesitas.',
+      'contact-text': '<strong>¿Preguntas o comentarios?</strong> Nos encantaría saber de ti.',
+      'footer-support': 'Soporte',
+      'footer-privacy': 'Privacidad',
+    }
+  };
+
+  const pageMeta = {
+    en: { title: 'JL Vela — Apps', description: 'Simple, private apps built for everyday life. No accounts. No cloud. No nonsense.' },
+    es: { title: 'JL Vela — Apps', description: 'Apps simples y privadas creadas para la vida cotidiana. Sin cuentas. Sin nube. Sin complicaciones.' }
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.documentElement.lang = lang;
+    document.title = pageMeta[lang].title;
+    document.querySelector('meta[name="description"]').content = pageMeta[lang].description;
+    document.getElementById('lang-btn').textContent = lang === 'en' ? 'ES' : 'EN';
+    localStorage.setItem('preslia-lang', lang);
+  }
+
+  function toggleLang() {
+    const current = localStorage.getItem('preslia-lang') || 'en';
+    applyLang(current === 'en' ? 'es' : 'en');
+  }
+
+  applyLang(localStorage.getItem('preslia-lang') || 'en');
+</script>
 
 </body>
 </html>
