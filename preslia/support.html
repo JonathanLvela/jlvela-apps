@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -33,9 +35,7 @@
     }
     .nav-logo-icon {
       width: 34px; height: 34px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--red), var(--red-dark));
-      display: flex; align-items: center; justify-content: center; font-size: 16px;
-      box-shadow: 0 2px 8px rgba(229,62,62,0.3);
+      display: block; object-fit: cover;
     }
     .nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--text); }
@@ -114,7 +114,7 @@
 <div class="nav-wrap">
   <div class="nav-inner">
     <a class="nav-logo" href="/preslia/">
-      <div class="nav-logo-icon">❤️</div>
+      <img class="nav-logo-icon" src="logo.png" alt="Preslia" />
       Preslia
     </a>
     <a class="nav-back" href="/preslia/">← Back to home</a>
