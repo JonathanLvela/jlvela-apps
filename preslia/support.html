@@ -39,6 +39,14 @@
     }
     .nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .lang-toggle {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+      background: transparent; border: 1.5px solid var(--border);
+      color: var(--muted); padding: 5px 10px; border-radius: 8px;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    }
+    .lang-toggle:hover { border-color: var(--red); color: var(--red); }
 
     .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; }
 
@@ -117,157 +125,130 @@
       <img class="nav-logo-icon" src="logo.png" alt="Preslia" />
       Preslia
     </a>
-    <a class="nav-back" href="/preslia/">← Back to home</a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">ES</button>
+      <a class="nav-back" href="/preslia/" data-i18n="nav-back">← Back to home</a>
+    </div>
   </div>
 </div>
 
 <div class="content">
-  <div class="page-badge">💬 Support</div>
-  <h1>How can we help?</h1>
-  <p class="subtitle">Find answers below, or reach out directly — we respond within 24 hours.</p>
+  <div class="page-badge" data-i18n="page-badge">💬 Support</div>
+  <h1 data-i18n="page-h1">How can we help?</h1>
+  <p class="subtitle" data-i18n="page-subtitle">Find answers below, or reach out directly — we respond within 24 hours.</p>
 
   <div class="contact-card">
     <div>
-      <h2>Contact support</h2>
-      <p>Can't find your answer? Send us an email and we'll get back to you quickly.</p>
+      <h2 data-i18n="contact-h2">Contact support</h2>
+      <p data-i18n="contact-p">Can't find your answer? Send us an email and we'll get back to you quickly.</p>
     </div>
-    <a href="mailto:support@jlvela.app" class="btn-white">✉️ Email us</a>
+    <a href="mailto:support@jlvela.app" class="btn-white" data-i18n="contact-btn">✉️ Email us</a>
   </div>
 
-  <div class="faq-section-label">Frequently Asked Questions</div>
+  <div class="faq-section-label" data-i18n="faq-label">Frequently Asked Questions</div>
 
   <!-- GETTING STARTED -->
   <div class="faq-group">
-    <div class="faq-group-title">Getting started</div>
+    <div class="faq-group-title" data-i18n="g1-title">Getting started</div>
 
     <details>
-      <summary>How do I set up my profile?</summary>
-      <div class="faq-body">
-        <p>When you first open Preslia, the onboarding flow will prompt you to enter a name and configure basic settings. You can always add more profiles later from the Profiles section on the Home tab.</p>
-      </div>
+      <summary data-i18n="g1q1-summary">How do I set up my profile?</summary>
+      <div class="faq-body" data-i18n="g1q1-body"><p>When you first open Preslia, the onboarding flow will prompt you to enter a name and configure basic settings. You can always add more profiles later from the Profiles section on the Home tab.</p></div>
     </details>
 
     <details>
-      <summary>Can I track multiple people?</summary>
-      <div class="faq-body">
-        <p>Yes! You can add multiple profiles — useful for tracking yourself and family members like a spouse or elderly parent. Switch between profiles from the Home tab. With Preslia Premium you can add unlimited profiles.</p>
-      </div>
+      <summary data-i18n="g1q2-summary">Can I track multiple people?</summary>
+      <div class="faq-body" data-i18n="g1q2-body"><p>Yes! You can add multiple profiles — useful for tracking yourself and family members like a spouse or elderly parent. Switch between profiles from the Home tab. With Preslia Premium you can add unlimited profiles.</p></div>
     </details>
 
     <details>
-      <summary>Does the app require an account or internet connection?</summary>
-      <div class="faq-body">
-        <p>No account is required, and no internet connection is needed for any core feature. All your data is stored locally on your device. The only time the app needs internet is when processing a Premium upgrade through the App Store or Google Play.</p>
-      </div>
+      <summary data-i18n="g1q3-summary">Does the app require an account or internet connection?</summary>
+      <div class="faq-body" data-i18n="g1q3-body"><p>No account is required, and no internet connection is needed for any core feature. All your data is stored locally on your device. The only time the app needs internet is when processing a Premium upgrade through the App Store or Google Play.</p></div>
     </details>
 
     <details>
-      <summary>What units does the app support?</summary>
-      <div class="faq-body">
-        <p>Blood pressure is always in mmHg. Weight can be logged in kilograms or pounds — you can change this in Settings. Caffeine is tracked in mg. Sleep is tracked in hours.</p>
-      </div>
+      <summary data-i18n="g1q4-summary">What units does the app support?</summary>
+      <div class="faq-body" data-i18n="g1q4-body"><p>Blood pressure is always in mmHg. Weight can be logged in kilograms or pounds — you can change this in Settings. Caffeine is tracked in mg. Sleep is tracked in hours.</p></div>
     </details>
   </div>
 
   <!-- LOGGING -->
   <div class="faq-group">
-    <div class="faq-group-title">Logging readings</div>
+    <div class="faq-group-title" data-i18n="g2-title">Logging readings</div>
 
     <details>
-      <summary>How do I log a blood pressure reading?</summary>
-      <div class="faq-body">
-        <p>Tap the <strong>+</strong> button on the Home tab, then select Blood Pressure. Enter your systolic and diastolic values. The pulse field is optional. The app will automatically classify your reading (Normal, Elevated, Stage 1, Stage 2) and save it with a timestamp.</p>
-      </div>
+      <summary data-i18n="g2q1-summary">How do I log a blood pressure reading?</summary>
+      <div class="faq-body" data-i18n="g2q1-body"><p>Tap the <strong>+</strong> button on the Home tab, then select Blood Pressure. Enter your systolic and diastolic values. The pulse field is optional. The app will automatically classify your reading (Normal, Elevated, Stage 1, Stage 2) and save it with a timestamp.</p></div>
     </details>
 
     <details>
-      <summary>Can I backdate a reading?</summary>
-      <div class="faq-body">
-        <p>Yes. When logging any reading, tap the date/time field to change it to any date and time you need. This is useful when you forgot to log something earlier in the day.</p>
-      </div>
+      <summary data-i18n="g2q2-summary">Can I backdate a reading?</summary>
+      <div class="faq-body" data-i18n="g2q2-body"><p>Yes. When logging any reading, tap the date/time field to change it to any date and time you need. This is useful when you forgot to log something earlier in the day.</p></div>
     </details>
 
     <details>
-      <summary>How do I edit or delete a logged reading?</summary>
-      <div class="faq-body">
-        <p>On the Home tab, scroll to the reading you want to edit and swipe left to reveal the edit and delete options. You can also find readings in the Calendar tab to edit from there.</p>
-      </div>
+      <summary data-i18n="g2q3-summary">How do I edit or delete a logged reading?</summary>
+      <div class="faq-body" data-i18n="g2q3-body"><p>On the Home tab, scroll to the reading you want to edit and swipe left to reveal the edit and delete options. You can also find readings in the Calendar tab to edit from there.</p></div>
     </details>
 
     <details>
-      <summary>How do I log weight, heart rate, sleep, or caffeine?</summary>
-      <div class="faq-body">
-        <p>Tap the <strong>+</strong> button on the Home tab and select the type of reading you want to add. Each vital type has its own quick-entry sheet. You can also log them from the quick-action buttons on the dashboard.</p>
-      </div>
+      <summary data-i18n="g2q4-summary">How do I log weight, heart rate, sleep, or caffeine?</summary>
+      <div class="faq-body" data-i18n="g2q4-body"><p>Tap the <strong>+</strong> button on the Home tab and select the type of reading you want to add. Each vital type has its own quick-entry sheet. You can also log them from the quick-action buttons on the dashboard.</p></div>
     </details>
 
     <details>
-      <summary>What are custom metrics?</summary>
-      <div class="faq-body">
-        <p>Custom Metrics (a Premium feature) let you track any health value not covered by the built-in vitals — for example, blood glucose, oxygen saturation, or any number your doctor wants you to monitor. You define the name and unit, and then log values just like any other reading.</p>
-      </div>
+      <summary data-i18n="g2q5-summary">What are custom metrics?</summary>
+      <div class="faq-body" data-i18n="g2q5-body"><p>Custom Metrics (a Premium feature) let you track any health value not covered by the built-in vitals — for example, blood glucose, oxygen saturation, or any number your doctor wants you to monitor. You define the name and unit, and then log values just like any other reading.</p></div>
     </details>
   </div>
 
   <!-- MEDICATIONS -->
   <div class="faq-group">
-    <div class="faq-group-title">Medications</div>
+    <div class="faq-group-title" data-i18n="g3-title">Medications</div>
 
     <details>
-      <summary>How do I add a medication?</summary>
-      <div class="faq-body">
-        <p>Go to the <strong>Meds</strong> tab and tap the <strong>+</strong> button. Enter the medication name, dose, frequency, and start date. You can also add optional notes. The medication will appear in your list and in PDF reports.</p>
-      </div>
+      <summary data-i18n="g3q1-summary">How do I add a medication?</summary>
+      <div class="faq-body" data-i18n="g3q1-body"><p>Go to the <strong>Meds</strong> tab and tap the <strong>+</strong> button. Enter the medication name, dose, frequency, and start date. You can also add optional notes. The medication will appear in your list and in PDF reports.</p></div>
     </details>
 
     <details>
-      <summary>How do I log that I took a dose?</summary>
-      <div class="faq-body">
-        <p>On the Meds tab, tap the <strong>Log Dose</strong> button next to a medication. The app records the time and adds it to your dose history. You can view past doses by expanding the medication card.</p>
-      </div>
+      <summary data-i18n="g3q2-summary">How do I log that I took a dose?</summary>
+      <div class="faq-body" data-i18n="g3q2-body"><p>On the Meds tab, tap the <strong>Log Dose</strong> button next to a medication. The app records the time and adds it to your dose history. You can view past doses by expanding the medication card.</p></div>
     </details>
 
     <details>
-      <summary>Can I get reminders to take my medication?</summary>
-      <div class="faq-body">
-        <p>Yes. In Settings, scroll to the Reminders section and enable medication reminders. You can set a daily reminder time for each medication, and the app will send a notification at that time.</p>
-      </div>
+      <summary data-i18n="g3q3-summary">Can I get reminders to take my medication?</summary>
+      <div class="faq-body" data-i18n="g3q3-body"><p>Yes. In Settings, scroll to the Reminders section and enable medication reminders. You can set a daily reminder time for each medication, and the app will send a notification at that time.</p></div>
     </details>
   </div>
 
   <!-- PDF REPORTS -->
   <div class="faq-group">
-    <div class="faq-group-title">PDF Reports</div>
+    <div class="faq-group-title" data-i18n="g4-title">PDF Reports</div>
 
     <details>
-      <summary>How do I export a PDF report?</summary>
-      <div class="faq-body">
-        <p>PDF export requires <strong>Preslia Premium</strong>. Once unlocked, go to the <strong>Stats</strong> tab and tap the Export button, or find the export option in Settings. You can choose a date range and the PDF will include charts, rolling averages, and your medication list.</p>
-      </div>
+      <summary data-i18n="g4q1-summary">How do I export a PDF report?</summary>
+      <div class="faq-body" data-i18n="g4q1-body"><p>PDF export requires <strong>Preslia Premium</strong>. Once unlocked, go to the <strong>Stats</strong> tab and tap the Export button, or find the export option in Settings. You can choose a date range and the PDF will include charts, rolling averages, and your medication list.</p></div>
     </details>
 
     <details>
-      <summary>Can I export in Spanish?</summary>
-      <div class="faq-body">
-        <p>Yes. If your device language is set to Spanish, the PDF will be generated entirely in Spanish — including all section headers, chart labels, day names, and medical content. Switch your device language in your device's Settings app.</p>
-      </div>
+      <summary data-i18n="g4q2-summary">Can I export in Spanish?</summary>
+      <div class="faq-body" data-i18n="g4q2-body"><p>Yes. If your device language is set to Spanish, the PDF will be generated entirely in Spanish — including all section headers, chart labels, day names, and medical content. Switch your device language in your device's Settings app.</p></div>
     </details>
 
     <details>
-      <summary>How do I share the PDF with my doctor?</summary>
-      <div class="faq-body">
-        <p>After generating the PDF, your device's share sheet opens automatically. You can email it, share it via Messages, save it to Files, print it, or send it through any other app on your device.</p>
-      </div>
+      <summary data-i18n="g4q3-summary">How do I share the PDF with my doctor?</summary>
+      <div class="faq-body" data-i18n="g4q3-body"><p>After generating the PDF, your device's share sheet opens automatically. You can email it, share it via Messages, save it to Files, print it, or send it through any other app on your device.</p></div>
     </details>
   </div>
 
   <!-- PREMIUM -->
   <div class="faq-group">
-    <div class="faq-group-title">Preslia Premium</div>
+    <div class="faq-group-title" data-i18n="g5-title">Preslia Premium</div>
 
     <details>
-      <summary>What's included in Premium?</summary>
-      <div class="faq-body">
+      <summary data-i18n="g5q1-summary">What's included in Premium?</summary>
+      <div class="faq-body" data-i18n="g5q1-body">
         <p>Premium unlocks five features:</p>
         <p>• <strong>PDF Reports</strong> — full doctor-ready reports with charts, averages, and medication history</p>
         <p>• <strong>Custom Themes</strong> — dozens of color schemes to personalize the app</p>
@@ -278,76 +259,58 @@
     </details>
 
     <details>
-      <summary>Is Premium a subscription?</summary>
-      <div class="faq-body">
-        <p>No. Preslia Premium is a one-time purchase for $9.99. You pay once and own it forever, including all future updates. There is no recurring charge.</p>
-      </div>
+      <summary data-i18n="g5q2-summary">Is Premium a subscription?</summary>
+      <div class="faq-body" data-i18n="g5q2-body"><p>No. Preslia Premium is a one-time purchase for $9.99. You pay once and own it forever, including all future updates. There is no recurring charge.</p></div>
     </details>
 
     <details>
-      <summary>How do I restore my Premium purchase on a new device?</summary>
-      <div class="faq-body">
-        <p>Go to <strong>Settings → Restore Purchases</strong>. Make sure you're signed in with the same Apple ID or Google account you used when you originally purchased Premium. The restore will complete automatically.</p>
-      </div>
+      <summary data-i18n="g5q3-summary">How do I restore my Premium purchase on a new device?</summary>
+      <div class="faq-body" data-i18n="g5q3-body"><p>Go to <strong>Settings → Restore Purchases</strong>. Make sure you're signed in with the same Apple ID or Google account you used when you originally purchased Premium. The restore will complete automatically.</p></div>
     </details>
 
     <details>
-      <summary>I purchased Premium but the features aren't unlocked — what do I do?</summary>
-      <div class="faq-body">
-        <p>Try the <strong>Restore Purchases</strong> option in Settings. If that doesn't work, please <a href="mailto:support@jlvela.app">contact us</a> with your order number from the App Store or Google Play and we'll resolve it for you.</p>
-      </div>
+      <summary data-i18n="g5q4-summary">I purchased Premium but the features aren't unlocked — what do I do?</summary>
+      <div class="faq-body" data-i18n="g5q4-body"><p>Try the <strong>Restore Purchases</strong> option in Settings. If that doesn't work, please <a href="mailto:support@jlvela.app">contact us</a> with your order number from the App Store or Google Play and we'll resolve it for you.</p></div>
     </details>
   </div>
 
   <!-- DATA & PRIVACY -->
   <div class="faq-group">
-    <div class="faq-group-title">Data & privacy</div>
+    <div class="faq-group-title" data-i18n="g6-title">Data &amp; privacy</div>
 
     <details>
-      <summary>Is my health data private?</summary>
-      <div class="faq-body">
-        <p>Yes, completely. All your health data is stored only on your device. We have no servers, no accounts, and no way to see your data. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
-      </div>
+      <summary data-i18n="g6q1-summary">Is my health data private?</summary>
+      <div class="faq-body" data-i18n="g6q1-body"><p>Yes, completely. All your health data is stored only on your device. We have no servers, no accounts, and no way to see your data. See our <a href="privacy.html">Privacy Policy</a> for full details.</p></div>
     </details>
 
     <details>
-      <summary>How do I back up my data?</summary>
-      <div class="faq-body">
-        <p>Go to <strong>Settings → Backup & Restore</strong> to export a backup file. Save it to iCloud Drive, Google Drive, or any other location. To restore, tap Restore Backup and select the file. Your data is included in your device's standard system backup (iCloud or Google Backup) if you have that enabled.</p>
-      </div>
+      <summary data-i18n="g6q2-summary">How do I back up my data?</summary>
+      <div class="faq-body" data-i18n="g6q2-body"><p>Go to <strong>Settings → Backup &amp; Restore</strong> to export a backup file. Save it to iCloud Drive, Google Drive, or any other location. To restore, tap Restore Backup and select the file. Your data is included in your device's standard system backup (iCloud or Google Backup) if you have that enabled.</p></div>
     </details>
 
     <details>
-      <summary>What happens to my data if I delete the app?</summary>
-      <div class="faq-body">
-        <p>All your locally stored data is permanently deleted when you uninstall the app. We recommend exporting a backup or PDF report before uninstalling if you want to keep a record.</p>
-      </div>
+      <summary data-i18n="g6q3-summary">What happens to my data if I delete the app?</summary>
+      <div class="faq-body" data-i18n="g6q3-body"><p>All your locally stored data is permanently deleted when you uninstall the app. We recommend exporting a backup or PDF report before uninstalling if you want to keep a record.</p></div>
     </details>
 
     <details>
-      <summary>Does Preslia collect any usage or analytics data?</summary>
-      <div class="faq-body">
-        <p>No. Preslia contains no analytics SDKs, no advertising networks, no crash reporting services, and no tracking tools of any kind. We collect zero usage or behavioral data.</p>
-      </div>
+      <summary data-i18n="g6q4-summary">Does Preslia collect any usage or analytics data?</summary>
+      <div class="faq-body" data-i18n="g6q4-body"><p>No. Preslia contains no analytics SDKs, no advertising networks, no crash-reporting services, and no tracking tools of any kind. We collect zero usage or behavioral data.</p></div>
     </details>
   </div>
 
   <!-- NOTIFICATIONS -->
   <div class="faq-group">
-    <div class="faq-group-title">Notifications & reminders</div>
+    <div class="faq-group-title" data-i18n="g7-title">Notifications &amp; reminders</div>
 
     <details>
-      <summary>How do I set up reminders?</summary>
-      <div class="faq-body">
-        <p>Go to <strong>Settings</strong> and scroll to the Reminders section. You can enable a daily blood pressure logging reminder, a daily weight reminder, and medication reminders — each with its own time setting.</p>
-      </div>
+      <summary data-i18n="g7q1-summary">How do I set up reminders?</summary>
+      <div class="faq-body" data-i18n="g7q1-body"><p>Go to <strong>Settings</strong> and scroll to the Reminders section. You can enable a daily blood pressure logging reminder, a daily weight reminder, and medication reminders — each with its own time setting.</p></div>
     </details>
 
     <details>
-      <summary>I'm not receiving notifications — how do I fix this?</summary>
-      <div class="faq-body">
-        <p>Make sure notifications are enabled for Preslia in your device's system Settings app. On iOS, go to Settings → Preslia → Notifications. On Android, go to Settings → Apps → Preslia → Notifications. On Android 12+, you may also need to disable battery optimization for the app.</p>
-      </div>
+      <summary data-i18n="g7q2-summary">I'm not receiving notifications — how do I fix this?</summary>
+      <div class="faq-body" data-i18n="g7q2-body"><p>Make sure notifications are enabled for Preslia in your device's system Settings app. On iOS, go to Settings → Preslia → Notifications. On Android, go to Settings → Apps → Preslia → Notifications. On Android 12+, you may also need to disable battery optimization for the app.</p></div>
     </details>
   </div>
 
@@ -356,12 +319,181 @@
 <footer>
   <p>© 2026 Preslia</p>
   <div class="footer-links">
-    <a href="/preslia/">Home</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
+    <a href="/preslia/" data-i18n="footer-home">Home</a>
+    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+    <a href="terms.html" data-i18n="footer-terms">Terms of Service</a>
     <a href="mailto:support@jlvela.app">support@jlvela.app</a>
   </div>
 </footer>
+
+<script>
+  const i18n = {
+    en: {
+      'nav-back': '← Back to home',
+      'page-badge': '💬 Support',
+      'page-h1': 'How can we help?',
+      'page-subtitle': 'Find answers below, or reach out directly — we respond within 24 hours.',
+      'contact-h2': 'Contact support',
+      'contact-p': "Can't find your answer? Send us an email and we'll get back to you quickly.",
+      'contact-btn': '✉️ Email us',
+      'faq-label': 'Frequently Asked Questions',
+      'g1-title': 'Getting started',
+      'g1q1-summary': 'How do I set up my profile?',
+      'g1q1-body': '<p>When you first open Preslia, the onboarding flow will prompt you to enter a name and configure basic settings. You can always add more profiles later from the Profiles section on the Home tab.</p>',
+      'g1q2-summary': 'Can I track multiple people?',
+      'g1q2-body': '<p>Yes! You can add multiple profiles — useful for tracking yourself and family members like a spouse or elderly parent. Switch between profiles from the Home tab. With Preslia Premium you can add unlimited profiles.</p>',
+      'g1q3-summary': 'Does the app require an account or internet connection?',
+      'g1q3-body': '<p>No account is required, and no internet connection is needed for any core feature. All your data is stored locally on your device. The only time the app needs internet is when processing a Premium upgrade through the App Store or Google Play.</p>',
+      'g1q4-summary': 'What units does the app support?',
+      'g1q4-body': '<p>Blood pressure is always in mmHg. Weight can be logged in kilograms or pounds — you can change this in Settings. Caffeine is tracked in mg. Sleep is tracked in hours.</p>',
+      'g2-title': 'Logging readings',
+      'g2q1-summary': 'How do I log a blood pressure reading?',
+      'g2q1-body': '<p>Tap the <strong>+</strong> button on the Home tab, then select Blood Pressure. Enter your systolic and diastolic values. The pulse field is optional. The app will automatically classify your reading (Normal, Elevated, Stage 1, Stage 2) and save it with a timestamp.</p>',
+      'g2q2-summary': 'Can I backdate a reading?',
+      'g2q2-body': '<p>Yes. When logging any reading, tap the date/time field to change it to any date and time you need. This is useful when you forgot to log something earlier in the day.</p>',
+      'g2q3-summary': 'How do I edit or delete a logged reading?',
+      'g2q3-body': '<p>On the Home tab, scroll to the reading you want to edit and swipe left to reveal the edit and delete options. You can also find readings in the Calendar tab to edit from there.</p>',
+      'g2q4-summary': 'How do I log weight, heart rate, sleep, or caffeine?',
+      'g2q4-body': '<p>Tap the <strong>+</strong> button on the Home tab and select the type of reading you want to add. Each vital type has its own quick-entry sheet. You can also log them from the quick-action buttons on the dashboard.</p>',
+      'g2q5-summary': 'What are custom metrics?',
+      'g2q5-body': '<p>Custom Metrics (a Premium feature) let you track any health value not covered by the built-in vitals — for example, blood glucose, oxygen saturation, or any number your doctor wants you to monitor. You define the name and unit, and then log values just like any other reading.</p>',
+      'g3-title': 'Medications',
+      'g3q1-summary': 'How do I add a medication?',
+      'g3q1-body': '<p>Go to the <strong>Meds</strong> tab and tap the <strong>+</strong> button. Enter the medication name, dose, frequency, and start date. You can also add optional notes. The medication will appear in your list and in PDF reports.</p>',
+      'g3q2-summary': 'How do I log that I took a dose?',
+      'g3q2-body': '<p>On the Meds tab, tap the <strong>Log Dose</strong> button next to a medication. The app records the time and adds it to your dose history. You can view past doses by expanding the medication card.</p>',
+      'g3q3-summary': 'Can I get reminders to take my medication?',
+      'g3q3-body': '<p>Yes. In Settings, scroll to the Reminders section and enable medication reminders. You can set a daily reminder time for each medication, and the app will send a notification at that time.</p>',
+      'g4-title': 'PDF Reports',
+      'g4q1-summary': 'How do I export a PDF report?',
+      'g4q1-body': '<p>PDF export requires <strong>Preslia Premium</strong>. Once unlocked, go to the <strong>Stats</strong> tab and tap the Export button, or find the export option in Settings. You can choose a date range and the PDF will include charts, rolling averages, and your medication list.</p>',
+      'g4q2-summary': 'Can I export in Spanish?',
+      'g4q2-body': "<p>Yes. If your device language is set to Spanish, the PDF will be generated entirely in Spanish — including all section headers, chart labels, day names, and medical content. Switch your device language in your device's Settings app.</p>",
+      'g4q3-summary': 'How do I share the PDF with my doctor?',
+      'g4q3-body': "<p>After generating the PDF, your device's share sheet opens automatically. You can email it, share it via Messages, save it to Files, print it, or send it through any other app on your device.</p>",
+      'g5-title': 'Preslia Premium',
+      'g5q1-summary': "What's included in Premium?",
+      'g5q1-body': '<p>Premium unlocks five features:</p><p>• <strong>PDF Reports</strong> — full doctor-ready reports with charts, averages, and medication history</p><p>• <strong>Custom Themes</strong> — dozens of color schemes to personalize the app</p><p>• <strong>Custom Metrics</strong> — track any health value beyond the built-in vitals</p><p>• <strong>Unlimited Profiles</strong> — add as many profiles as you need</p><p>• <strong>Home Screen Widget</strong> — see your latest BP reading without opening the app</p>',
+      'g5q2-summary': 'Is Premium a subscription?',
+      'g5q2-body': '<p>No. Preslia Premium is a one-time purchase for $9.99. You pay once and own it forever, including all future updates. There is no recurring charge.</p>',
+      'g5q3-summary': 'How do I restore my Premium purchase on a new device?',
+      'g5q3-body': "<p>Go to <strong>Settings → Restore Purchases</strong>. Make sure you're signed in with the same Apple ID or Google account you used when you originally purchased Premium. The restore will complete automatically.</p>",
+      'g5q4-summary': "I purchased Premium but the features aren't unlocked — what do I do?",
+      'g5q4-body': "<p>Try the <strong>Restore Purchases</strong> option in Settings. If that doesn't work, please <a href=\"mailto:support@jlvela.app\">contact us</a> with your order number from the App Store or Google Play and we'll resolve it for you.</p>",
+      'g6-title': 'Data &amp; privacy',
+      'g6q1-summary': 'Is my health data private?',
+      'g6q1-body': '<p>Yes, completely. All your health data is stored only on your device. We have no servers, no accounts, and no way to see your data. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>',
+      'g6q2-summary': 'How do I back up my data?',
+      'g6q2-body': "<p>Go to <strong>Settings → Backup &amp; Restore</strong> to export a backup file. Save it to iCloud Drive, Google Drive, or any other location. To restore, tap Restore Backup and select the file. Your data is included in your device's standard system backup (iCloud or Google Backup) if you have that enabled.</p>",
+      'g6q3-summary': 'What happens to my data if I delete the app?',
+      'g6q3-body': '<p>All your locally stored data is permanently deleted when you uninstall the app. We recommend exporting a backup or PDF report before uninstalling if you want to keep a record.</p>',
+      'g6q4-summary': 'Does Preslia collect any usage or analytics data?',
+      'g6q4-body': '<p>No. Preslia contains no analytics SDKs, no advertising networks, no crash-reporting services, and no tracking tools of any kind. We collect zero usage or behavioral data.</p>',
+      'g7-title': 'Notifications &amp; reminders',
+      'g7q1-summary': 'How do I set up reminders?',
+      'g7q1-body': '<p>Go to <strong>Settings</strong> and scroll to the Reminders section. You can enable a daily blood pressure logging reminder, a daily weight reminder, and medication reminders — each with its own time setting.</p>',
+      'g7q2-summary': "I'm not receiving notifications — how do I fix this?",
+      'g7q2-body': "<p>Make sure notifications are enabled for Preslia in your device's system Settings app. On iOS, go to Settings → Preslia → Notifications. On Android, go to Settings → Apps → Preslia → Notifications. On Android 12+, you may also need to disable battery optimization for the app.</p>",
+      'footer-home': 'Home',
+      'footer-privacy': 'Privacy Policy',
+      'footer-terms': 'Terms of Service',
+    },
+    es: {
+      'nav-back': '← Volver al inicio',
+      'page-badge': '💬 Soporte',
+      'page-h1': '¿Cómo podemos ayudarte?',
+      'page-subtitle': 'Encuentra respuestas abajo, o contáctanos directamente — respondemos en menos de 24 horas.',
+      'contact-h2': 'Contactar soporte',
+      'contact-p': '¿No encuentras tu respuesta? Envíanos un correo y te responderemos rápidamente.',
+      'contact-btn': '✉️ Escríbenos',
+      'faq-label': 'Preguntas frecuentes',
+      'g1-title': 'Primeros pasos',
+      'g1q1-summary': '¿Cómo configuro mi perfil?',
+      'g1q1-body': '<p>Cuando abres Preslia por primera vez, el proceso de configuración inicial te pedirá ingresar un nombre y configurar ajustes básicos. Puedes agregar más perfiles en cualquier momento desde la sección Perfiles en la pestaña de Inicio.</p>',
+      'g1q2-summary': '¿Puedo rastrear a varias personas?',
+      'g1q2-body': '<p>¡Sí! Puedes agregar múltiples perfiles — útil para rastrear a ti mismo y familiares como una pareja o un padre mayor. Cambia entre perfiles desde la pestaña de Inicio. Con Preslia Premium puedes agregar perfiles ilimitados.</p>',
+      'g1q3-summary': '¿La app requiere una cuenta o conexión a internet?',
+      'g1q3-body': '<p>No se requiere cuenta, y no se necesita conexión a internet para ninguna función principal. Todos tus datos se almacenan localmente en tu dispositivo. La única vez que la app necesita internet es al procesar una actualización Premium a través del App Store o Google Play.</p>',
+      'g1q4-summary': '¿Qué unidades admite la app?',
+      'g1q4-body': '<p>La presión arterial siempre está en mmHg. El peso puede registrarse en kilogramos o libras — puedes cambiarlo en Configuración. La cafeína se registra en mg. El sueño se registra en horas.</p>',
+      'g2-title': 'Registro de lecturas',
+      'g2q1-summary': '¿Cómo registro una lectura de presión arterial?',
+      'g2q1-body': '<p>Toca el botón <strong>+</strong> en la pestaña de Inicio, luego selecciona Presión Arterial. Ingresa tus valores sistólico y diastólico. El campo de pulso es opcional. La app clasificará automáticamente tu lectura (Normal, Elevada, Etapa 1, Etapa 2) y la guardará con una marca de tiempo.</p>',
+      'g2q2-summary': '¿Puedo registrar una lectura con fecha anterior?',
+      'g2q2-body': '<p>Sí. Al registrar cualquier lectura, toca el campo de fecha/hora para cambiarla a cualquier fecha y hora que necesites. Esto es útil cuando olvidaste registrar algo antes durante el día.</p>',
+      'g2q3-summary': '¿Cómo edito o elimino una lectura registrada?',
+      'g2q3-body': '<p>En la pestaña de Inicio, desplázate hasta la lectura que deseas editar y desliza hacia la izquierda para revelar las opciones de editar y eliminar. También puedes encontrar lecturas en la pestaña de Calendario para editarlas desde allí.</p>',
+      'g2q4-summary': '¿Cómo registro peso, ritmo cardíaco, sueño o cafeína?',
+      'g2q4-body': '<p>Toca el botón <strong>+</strong> en la pestaña de Inicio y selecciona el tipo de lectura que deseas agregar. Cada tipo de signo vital tiene su propia hoja de entrada rápida. También puedes registrarlos desde los botones de acción rápida en el panel.</p>',
+      'g2q5-summary': '¿Qué son las métricas personalizadas?',
+      'g2q5-body': '<p>Las Métricas Personalizadas (una función Premium) te permiten rastrear cualquier valor de salud no cubierto por los signos vitales integrados — por ejemplo, glucosa en sangre, saturación de oxígeno, o cualquier número que tu médico quiera que monitorees. Tú defines el nombre y la unidad, y luego registras valores igual que cualquier otra lectura.</p>',
+      'g3-title': 'Medicamentos',
+      'g3q1-summary': '¿Cómo agrego un medicamento?',
+      'g3q1-body': '<p>Ve a la pestaña <strong>Meds</strong> y toca el botón <strong>+</strong>. Ingresa el nombre del medicamento, dosis, frecuencia y fecha de inicio. También puedes agregar notas opcionales. El medicamento aparecerá en tu lista y en los reportes PDF.</p>',
+      'g3q2-summary': '¿Cómo registro que tomé una dosis?',
+      'g3q2-body': '<p>En la pestaña Meds, toca el botón <strong>Registrar dosis</strong> junto a un medicamento. La app registra la hora y lo agrega a tu historial de dosis. Puedes ver dosis anteriores expandiendo la tarjeta del medicamento.</p>',
+      'g3q3-summary': '¿Puedo recibir recordatorios para tomar mis medicamentos?',
+      'g3q3-body': '<p>Sí. En Configuración, desplázate a la sección de Recordatorios y activa los recordatorios de medicamentos. Puedes establecer una hora de recordatorio diario para cada medicamento, y la app enviará una notificación a esa hora.</p>',
+      'g4-title': 'Reportes PDF',
+      'g4q1-summary': '¿Cómo exporto un reporte PDF?',
+      'g4q1-body': '<p>La exportación PDF requiere <strong>Preslia Premium</strong>. Una vez desbloqueada, ve a la pestaña <strong>Estadísticas</strong> y toca el botón Exportar, o encuentra la opción de exportación en Configuración. Puedes elegir un rango de fechas y el PDF incluirá gráficas, promedios acumulados y tu lista de medicamentos.</p>',
+      'g4q2-summary': '¿Puedo exportar en español?',
+      'g4q2-body': '<p>Sí. Si el idioma de tu dispositivo está configurado en español, el PDF se generará completamente en español — incluyendo todos los encabezados de sección, etiquetas de gráficas, nombres de días y contenido médico. Cambia el idioma de tu dispositivo en la app de Configuración de tu dispositivo.</p>',
+      'g4q3-summary': '¿Cómo comparto el PDF con mi médico?',
+      'g4q3-body': '<p>Después de generar el PDF, la hoja de compartir de tu dispositivo se abre automáticamente. Puedes enviarlo por correo, compartirlo vía Mensajes, guardarlo en Archivos, imprimirlo o enviarlo a través de cualquier otra app en tu dispositivo.</p>',
+      'g5-title': 'Preslia Premium',
+      'g5q1-summary': '¿Qué incluye Premium?',
+      'g5q1-body': '<p>Premium desbloquea cinco funciones:</p><p>• <strong>Reportes PDF</strong> — informes completos listos para el médico con gráficas, promedios e historial de medicamentos</p><p>• <strong>Temas Personalizados</strong> — decenas de esquemas de colores para personalizar la app</p><p>• <strong>Métricas Personalizadas</strong> — registra cualquier valor de salud más allá de los signos vitales integrados</p><p>• <strong>Perfiles Ilimitados</strong> — agrega tantos perfiles como necesites</p><p>• <strong>Widget de Pantalla de Inicio</strong> — ve tu última lectura de presión arterial sin abrir la app</p>',
+      'g5q2-summary': '¿Es Premium una suscripción?',
+      'g5q2-body': '<p>No. Preslia Premium es una compra única por $9.99. Pagas una vez y lo posees para siempre, incluyendo todas las actualizaciones futuras. No hay cargo recurrente.</p>',
+      'g5q3-summary': '¿Cómo restauro mi compra Premium en un dispositivo nuevo?',
+      'g5q3-body': '<p>Ve a <strong>Configuración → Restaurar compras</strong>. Asegúrate de iniciar sesión con el mismo Apple ID o cuenta de Google que usaste cuando compraste Premium originalmente. La restauración se completará automáticamente.</p>',
+      'g5q4-summary': 'Compré Premium pero las funciones no están desbloqueadas — ¿qué hago?',
+      'g5q4-body': '<p>Prueba la opción <strong>Restaurar compras</strong> en Configuración. Si eso no funciona, por favor <a href="mailto:support@jlvela.app">contáctanos</a> con tu número de pedido del App Store o Google Play y lo resolveremos por ti.</p>',
+      'g6-title': 'Datos y privacidad',
+      'g6q1-summary': '¿Son privados mis datos de salud?',
+      'g6q1-body': '<p>Sí, completamente. Todos tus datos de salud se almacenan solo en tu dispositivo. No tenemos servidores, ni cuentas, ni forma de ver tus datos. Consulta nuestra <a href="privacy.html">Política de Privacidad</a> para más detalles.</p>',
+      'g6q2-summary': '¿Cómo hago una copia de seguridad de mis datos?',
+      'g6q2-body': "<p>Ve a <strong>Configuración → Copia de seguridad y restauración</strong> para exportar un archivo de respaldo. Guárdalo en iCloud Drive, Google Drive u otra ubicación. Para restaurar, toca Restaurar copia de seguridad y selecciona el archivo. Tus datos están incluidos en la copia de seguridad estándar del sistema de tu dispositivo (iCloud o Google Backup) si tienes eso activado.</p>",
+      'g6q3-summary': '¿Qué pasa con mis datos si elimino la app?',
+      'g6q3-body': '<p>Todos tus datos almacenados localmente se eliminan permanentemente cuando desinstales la app. Te recomendamos exportar una copia de seguridad o reporte PDF antes de desinstalar si deseas conservar un registro.</p>',
+      'g6q4-summary': '¿Preslia recopila datos de uso o analíticas?',
+      'g6q4-body': '<p>No. Preslia no contiene SDKs de analíticas, redes publicitarias, servicios de reporte de fallos ni herramientas de rastreo de ningún tipo. Recopilamos cero datos de uso o comportamiento.</p>',
+      'g7-title': 'Notificaciones y recordatorios',
+      'g7q1-summary': '¿Cómo configuro los recordatorios?',
+      'g7q1-body': '<p>Ve a <strong>Configuración</strong> y desplázate a la sección de Recordatorios. Puedes activar un recordatorio diario de presión arterial, un recordatorio diario de peso y recordatorios de medicamentos — cada uno con su propia configuración de hora.</p>',
+      'g7q2-summary': 'No estoy recibiendo notificaciones — ¿cómo lo soluciono?',
+      'g7q2-body': '<p>Asegúrate de que las notificaciones estén habilitadas para Preslia en la app de Configuración del sistema de tu dispositivo. En iOS, ve a Configuración → Preslia → Notificaciones. En Android, ve a Configuración → Apps → Preslia → Notificaciones. En Android 12+, es posible que también necesites desactivar la optimización de batería para la app.</p>',
+      'footer-home': 'Inicio',
+      'footer-privacy': 'Política de Privacidad',
+      'footer-terms': 'Términos de Servicio',
+    }
+  };
+
+  const pageMeta = {
+    en: { title: 'Support — Preslia', description: 'Preslia support and frequently asked questions. Get help with blood pressure logging, medications, PDF reports, Premium, and notifications.' },
+    es: { title: 'Soporte — Preslia', description: 'Soporte de Preslia y preguntas frecuentes. Obtén ayuda con el registro de presión arterial, medicamentos, reportes PDF, Premium y notificaciones.' }
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.documentElement.lang = lang;
+    document.title = pageMeta[lang].title;
+    document.querySelector('meta[name="description"]').content = pageMeta[lang].description;
+    document.getElementById('lang-btn').textContent = lang === 'en' ? 'ES' : 'EN';
+    localStorage.setItem('preslia-lang', lang);
+  }
+
+  function toggleLang() {
+    const current = localStorage.getItem('preslia-lang') || 'en';
+    applyLang(current === 'en' ? 'es' : 'en');
+  }
+
+  applyLang(localStorage.getItem('preslia-lang') || 'en');
+</script>
 
 </body>
 </html>

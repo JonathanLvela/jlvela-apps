@@ -39,6 +39,14 @@
     }
     .nav-back { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .lang-toggle {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+      background: transparent; border: 1.5px solid var(--border);
+      color: var(--muted); padding: 5px 10px; border-radius: 8px;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    }
+    .lang-toggle:hover { border-color: var(--red); color: var(--red); }
 
     .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; }
 
@@ -81,78 +89,196 @@
       <img class="nav-logo-icon" src="logo.png" alt="Preslia" />
       Preslia
     </a>
-    <a class="nav-back" href="/preslia/">← Back to home</a>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">ES</button>
+      <a class="nav-back" href="/preslia/" data-i18n="nav-back">← Back to home</a>
+    </div>
   </div>
 </div>
 
 <div class="content">
-  <div class="page-badge">📋 Legal</div>
-  <h1>Terms of Service</h1>
-  <p class="updated">Last updated: May 2026</p>
+  <div class="page-badge" data-i18n="page-badge">📋 Legal</div>
+  <h1 data-i18n="page-h1">Terms of Service</h1>
+  <p class="updated" data-i18n="page-updated">Last updated: May 2026</p>
 
   <div class="highlight-box">
-    <p>📋 Short version: Use the app as intended, don't misuse it, and don't rely on it for medical decisions. Premium is a one-time purchase with no refunds once features are unlocked.</p>
+    <p data-i18n="highlight">📋 Short version: Use the app as intended, don't misuse it, and don't rely on it for medical decisions. Premium is a one-time purchase with no refunds once features are unlocked.</p>
   </div>
 
-  <h2>1. Acceptance of terms</h2>
-  <p>By downloading, installing, or using Preslia ("the app"), you agree to these Terms of Service. If you do not agree to these terms, please do not use the app.</p>
+  <h2 data-i18n="s1-h">1. Acceptance of terms</h2>
+  <p data-i18n="s1-p">By downloading, installing, or using Preslia ("the app"), you agree to these Terms of Service. If you do not agree to these terms, please do not use the app.</p>
 
-  <h2>2. Description of service</h2>
-  <p>Preslia is a personal health-tracking application for iOS and Android. The app allows you to log and monitor vitals including blood pressure, weight, heart rate, sleep, and caffeine intake, as well as manage medication schedules. All data is stored locally on your device.</p>
-  <p>The app is available as a free download with optional in-app purchases ("Preslia Premium") that unlock additional features.</p>
+  <h2 data-i18n="s2-h">2. Description of service</h2>
+  <p data-i18n="s2-p1">Preslia is a personal health-tracking application for iOS and Android. The app allows you to log and monitor vitals including blood pressure, weight, heart rate, sleep, and caffeine intake, as well as manage medication schedules. All data is stored locally on your device.</p>
+  <p data-i18n="s2-p2">The app is available as a free download with optional in-app purchases ("Preslia Premium") that unlock additional features.</p>
 
-  <h2>3. Medical disclaimer</h2>
-  <p><strong>Preslia is not a medical device and is not intended for medical use.</strong> The app is a personal logging and tracking tool only. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition. It does not constitute medical advice of any kind.</p>
-  <p>Do not use information logged in Preslia as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have logged or observed in this app.</p>
-  <p>In a medical emergency, contact emergency services (911 in the US) immediately. Do not rely on this app in an emergency situation.</p>
+  <h2 data-i18n="s3-h">3. Medical disclaimer</h2>
+  <p data-i18n="s3-p1"><strong>Preslia is not a medical device and is not intended for medical use.</strong> The app is a personal logging and tracking tool only. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition. It does not constitute medical advice of any kind.</p>
+  <p data-i18n="s3-p2">Do not use information logged in Preslia as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have logged or observed in this app.</p>
+  <p data-i18n="s3-p3">In a medical emergency, contact emergency services (911 in the US) immediately. Do not rely on this app in an emergency situation.</p>
 
-  <h2>4. Permitted use</h2>
-  <p>You may use Preslia for personal, non-commercial health tracking. You agree not to:</p>
-  <ul>
+  <h2 data-i18n="s4-h">4. Permitted use</h2>
+  <p data-i18n="s4-p">You may use Preslia for personal, non-commercial health tracking. You agree not to:</p>
+  <ul data-i18n="s4-ul">
     <li>Reverse engineer, decompile, or disassemble the app</li>
     <li>Attempt to extract or misuse the app's source code</li>
     <li>Use the app in any way that violates applicable laws or regulations</li>
     <li>Resell, sublicense, or redistribute the app or any portion of it</li>
   </ul>
 
-  <h2>5. Premium purchases</h2>
-  <p>Preslia Premium is a one-time, non-consumable in-app purchase processed entirely through Apple App Store or Google Play. All billing, payment processing, and refund handling is governed by Apple's or Google's terms and policies.</p>
-  <p>Once Premium features are unlocked and activated, purchases are generally non-refundable, subject to the refund policies of Apple or Google as applicable. If you believe you are entitled to a refund, please contact Apple or Google support directly.</p>
-  <p>Your Premium purchase is tied to your Apple ID or Google account and can be restored on any device signed in with the same account via the Restore Purchases option in Settings.</p>
+  <h2 data-i18n="s5-h">5. Premium purchases</h2>
+  <p data-i18n="s5-p1">Preslia Premium is a one-time, non-consumable in-app purchase processed entirely through Apple App Store or Google Play. All billing, payment processing, and refund handling is governed by Apple's or Google's terms and policies.</p>
+  <p data-i18n="s5-p2">Once Premium features are unlocked and activated, purchases are generally non-refundable, subject to the refund policies of Apple or Google as applicable. If you believe you are entitled to a refund, please contact Apple or Google support directly.</p>
+  <p data-i18n="s5-p3">Your Premium purchase is tied to your Apple ID or Google account and can be restored on any device signed in with the same account via the Restore Purchases option in Settings.</p>
 
-  <h2>6. Data and privacy</h2>
-  <p>Your health data is stored locally on your device and is never transmitted to us. Please review our <a href="privacy.html">Privacy Policy</a> for full details on how the app handles your data.</p>
-  <p>You are solely responsible for the data you enter into the app and for maintaining any backups you wish to keep.</p>
+  <h2 data-i18n="s6-h">6. Data and privacy</h2>
+  <p data-i18n="s6-p1">Your health data is stored locally on your device and is never transmitted to us. Please review our <a href="privacy.html">Privacy Policy</a> for full details on how the app handles your data.</p>
+  <p data-i18n="s6-p2">You are solely responsible for the data you enter into the app and for maintaining any backups you wish to keep.</p>
 
-  <h2>7. Intellectual property</h2>
-  <p>All content, design, graphics, code, and functionality of Preslia are the exclusive property of the developer and are protected by applicable intellectual property laws. These Terms do not grant you any rights to the app's intellectual property beyond the limited license to use the app as described herein.</p>
+  <h2 data-i18n="s7-h">7. Intellectual property</h2>
+  <p data-i18n="s7-p">All content, design, graphics, code, and functionality of Preslia are the exclusive property of the developer and are protected by applicable intellectual property laws. These Terms do not grant you any rights to the app's intellectual property beyond the limited license to use the app as described herein.</p>
 
-  <h2>8. Disclaimers and limitation of liability</h2>
-  <p>The app is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the app will be error-free, uninterrupted, or that readings or calculations within the app are accurate or suitable for any particular purpose.</p>
-  <p>To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the app, including but not limited to loss of data, health outcomes, or decisions made based on information logged in the app.</p>
+  <h2 data-i18n="s8-h">8. Disclaimers and limitation of liability</h2>
+  <p data-i18n="s8-p1">The app is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the app will be error-free, uninterrupted, or that readings or calculations within the app are accurate or suitable for any particular purpose.</p>
+  <p data-i18n="s8-p2">To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the app, including but not limited to loss of data, health outcomes, or decisions made based on information logged in the app.</p>
 
-  <h2>9. Changes to the app</h2>
-  <p>We reserve the right to modify, suspend, or discontinue any part of the app at any time. We will endeavor to provide notice of significant changes through app updates. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
+  <h2 data-i18n="s9-h">9. Changes to the app</h2>
+  <p data-i18n="s9-p">We reserve the right to modify, suspend, or discontinue any part of the app at any time. We will endeavor to provide notice of significant changes through app updates. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
 
-  <h2>10. Changes to these terms</h2>
-  <p>We may update these Terms of Service from time to time. When we do, we will update the "Last updated" date at the top of this page. Material changes will be communicated via an app update. Continued use of the app after any changes constitutes your acceptance of the new terms.</p>
+  <h2 data-i18n="s10-h">10. Changes to these terms</h2>
+  <p data-i18n="s10-p">We may update these Terms of Service from time to time. When we do, we will update the "Last updated" date at the top of this page. Material changes will be communicated via an app update. Continued use of the app after any changes constitutes your acceptance of the new terms.</p>
 
-  <h2>11. Governing law</h2>
-  <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of the app shall be resolved in the appropriate jurisdiction.</p>
+  <h2 data-i18n="s11-h">11. Governing law</h2>
+  <p data-i18n="s11-p">These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of the app shall be resolved in the appropriate jurisdiction.</p>
 
-  <h2>12. Contact</h2>
-  <p>If you have any questions about these Terms of Service, please contact us at: <a href="mailto:support@jlvela.app">support@jlvela.app</a></p>
+  <h2 data-i18n="s12-h">12. Contact</h2>
+  <p data-i18n="s12-p">If you have any questions about these Terms of Service, please contact us at: <a href="mailto:support@jlvela.app">support@jlvela.app</a></p>
 </div>
 
 <footer>
   <p>© 2026 Preslia</p>
   <div class="footer-links">
-    <a href="/preslia/">Home</a>
-    <a href="support.html">Support</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="mailto:support@jlvela.app">Contact</a>
+    <a href="/preslia/" data-i18n="footer-home">Home</a>
+    <a href="support.html" data-i18n="footer-support">Support</a>
+    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+    <a href="mailto:support@jlvela.app" data-i18n="footer-contact">Contact</a>
   </div>
 </footer>
+
+<script>
+  const i18n = {
+    en: {
+      'nav-back': '← Back to home',
+      'page-badge': '📋 Legal',
+      'page-h1': 'Terms of Service',
+      'page-updated': 'Last updated: May 2026',
+      'highlight': "📋 Short version: Use the app as intended, don't misuse it, and don't rely on it for medical decisions. Premium is a one-time purchase with no refunds once features are unlocked.",
+      's1-h': '1. Acceptance of terms',
+      's1-p': 'By downloading, installing, or using Preslia ("the app"), you agree to these Terms of Service. If you do not agree to these terms, please do not use the app.',
+      's2-h': '2. Description of service',
+      's2-p1': 'Preslia is a personal health-tracking application for iOS and Android. The app allows you to log and monitor vitals including blood pressure, weight, heart rate, sleep, and caffeine intake, as well as manage medication schedules. All data is stored locally on your device.',
+      's2-p2': 'The app is available as a free download with optional in-app purchases ("Preslia Premium") that unlock additional features.',
+      's3-h': '3. Medical disclaimer',
+      's3-p1': '<strong>Preslia is not a medical device and is not intended for medical use.</strong> The app is a personal logging and tracking tool only. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition. It does not constitute medical advice of any kind.',
+      's3-p2': 'Do not use information logged in Preslia as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have logged or observed in this app.',
+      's3-p3': 'In a medical emergency, contact emergency services (911 in the US) immediately. Do not rely on this app in an emergency situation.',
+      's4-h': '4. Permitted use',
+      's4-p': 'You may use Preslia for personal, non-commercial health tracking. You agree not to:',
+      's4-ul': "<li>Reverse engineer, decompile, or disassemble the app</li><li>Attempt to extract or misuse the app's source code</li><li>Use the app in any way that violates applicable laws or regulations</li><li>Resell, sublicense, or redistribute the app or any portion of it</li>",
+      's5-h': '5. Premium purchases',
+      's5-p1': "Preslia Premium is a one-time, non-consumable in-app purchase processed entirely through Apple App Store or Google Play. All billing, payment processing, and refund handling is governed by Apple's or Google's terms and policies.",
+      's5-p2': 'Once Premium features are unlocked and activated, purchases are generally non-refundable, subject to the refund policies of Apple or Google as applicable. If you believe you are entitled to a refund, please contact Apple or Google support directly.',
+      's5-p3': 'Your Premium purchase is tied to your Apple ID or Google account and can be restored on any device signed in with the same account via the Restore Purchases option in Settings.',
+      's6-h': '6. Data and privacy',
+      's6-p1': 'Your health data is stored locally on your device and is never transmitted to us. Please review our <a href="privacy.html">Privacy Policy</a> for full details on how the app handles your data.',
+      's6-p2': 'You are solely responsible for the data you enter into the app and for maintaining any backups you wish to keep.',
+      's7-h': '7. Intellectual property',
+      's7-p': "All content, design, graphics, code, and functionality of Preslia are the exclusive property of the developer and are protected by applicable intellectual property laws. These Terms do not grant you any rights to the app's intellectual property beyond the limited license to use the app as described herein.",
+      's8-h': '8. Disclaimers and limitation of liability',
+      's8-p1': 'The app is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the app will be error-free, uninterrupted, or that readings or calculations within the app are accurate or suitable for any particular purpose.',
+      's8-p2': 'To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the app, including but not limited to loss of data, health outcomes, or decisions made based on information logged in the app.',
+      's9-h': '9. Changes to the app',
+      's9-p': 'We reserve the right to modify, suspend, or discontinue any part of the app at any time. We will endeavor to provide notice of significant changes through app updates. Continued use of the app after changes constitutes acceptance of the updated terms.',
+      's10-h': '10. Changes to these terms',
+      's10-p': 'We may update these Terms of Service from time to time. When we do, we will update the "Last updated" date at the top of this page. Material changes will be communicated via an app update. Continued use of the app after any changes constitutes your acceptance of the new terms.',
+      's11-h': '11. Governing law',
+      's11-p': 'These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of the app shall be resolved in the appropriate jurisdiction.',
+      's12-h': '12. Contact',
+      's12-p': 'If you have any questions about these Terms of Service, please contact us at: <a href="mailto:support@jlvela.app">support@jlvela.app</a>',
+      'footer-home': 'Home',
+      'footer-support': 'Support',
+      'footer-privacy': 'Privacy Policy',
+      'footer-contact': 'Contact',
+    },
+    es: {
+      'nav-back': '← Volver al inicio',
+      'page-badge': '📋 Legal',
+      'page-h1': 'Términos de Servicio',
+      'page-updated': 'Última actualización: Mayo 2026',
+      'highlight': '📋 Versión corta: Usa la app según lo previsto, no la uses indebidamente y no confíes en ella para decisiones médicas. Premium es una compra única sin reembolsos una vez que las funciones están desbloqueadas.',
+      's1-h': '1. Aceptación de términos',
+      's1-p': 'Al descargar, instalar o usar Preslia ("la app"), aceptas estos Términos de Servicio. Si no estás de acuerdo con estos términos, por favor no uses la app.',
+      's2-h': '2. Descripción del servicio',
+      's2-p1': 'Preslia es una aplicación personal de seguimiento de salud para iOS y Android. La app te permite registrar y monitorear signos vitales como presión arterial, peso, ritmo cardíaco, sueño y consumo de cafeína, así como gestionar horarios de medicamentos. Todos los datos se almacenan localmente en tu dispositivo.',
+      's2-p2': 'La app está disponible como descarga gratuita con compras opcionales dentro de la app ("Preslia Premium") que desbloquean funciones adicionales.',
+      's3-h': '3. Aviso médico',
+      's3-p1': '<strong>Preslia no es un dispositivo médico y no está destinada al uso médico.</strong> La app es únicamente una herramienta personal de registro y seguimiento. No está destinada a diagnosticar, tratar, curar ni prevenir ninguna enfermedad o condición médica. No constituye asesoramiento médico de ningún tipo.',
+      's3-p2': 'No uses la información registrada en Preslia como sustituto del asesoramiento médico profesional, diagnóstico o tratamiento. Siempre busca el consejo de un proveedor de atención médica calificado ante cualquier pregunta sobre una condición médica. Nunca ignores el asesoramiento médico profesional ni demores en buscarlo debido a algo que hayas registrado u observado en esta app.',
+      's3-p3': 'En una emergencia médica, contacta a los servicios de emergencia (911 en EE. UU.) de inmediato. No dependas de esta app en una situación de emergencia.',
+      's4-h': '4. Uso permitido',
+      's4-p': 'Puedes usar Preslia para el seguimiento personal y no comercial de la salud. Aceptas no:',
+      's4-ul': '<li>Aplicar ingeniería inversa, descompilar o desensamblar la app</li><li>Intentar extraer o hacer un uso indebido del código fuente de la app</li><li>Usar la app de cualquier manera que viole las leyes o regulaciones aplicables</li><li>Revender, sublicenciar o redistribuir la app o cualquier parte de ella</li>',
+      's5-h': '5. Compras Premium',
+      's5-p1': 'Preslia Premium es una compra única no consumible dentro de la app, procesada completamente a través de Apple App Store o Google Play. Toda la facturación, el procesamiento de pagos y el manejo de reembolsos están regidos por los términos y políticas de Apple o Google.',
+      's5-p2': 'Una vez que las funciones Premium estén desbloqueadas y activadas, las compras son generalmente no reembolsables, sujeto a las políticas de reembolso de Apple o Google según corresponda. Si crees que tienes derecho a un reembolso, contáctate directamente con el soporte de Apple o Google.',
+      's5-p3': 'Tu compra Premium está vinculada a tu Apple ID o cuenta de Google y puede restaurarse en cualquier dispositivo con sesión iniciada en la misma cuenta mediante la opción Restaurar compras en Configuración.',
+      's6-h': '6. Datos y privacidad',
+      's6-p1': 'Tus datos de salud se almacenan localmente en tu dispositivo y nunca se nos transmiten. Revisa nuestra <a href="privacy.html">Política de Privacidad</a> para obtener detalles completos sobre cómo la app maneja tus datos.',
+      's6-p2': 'Eres el único responsable de los datos que ingresas en la app y de mantener las copias de seguridad que desees conservar.',
+      's7-h': '7. Propiedad intelectual',
+      's7-p': "Todo el contenido, diseño, gráficos, código y funcionalidad de Preslia son propiedad exclusiva del desarrollador y están protegidos por las leyes de propiedad intelectual aplicables. Estos Términos no te otorgan ningún derecho sobre la propiedad intelectual de la app más allá de la licencia limitada para usar la app como se describe aquí.",
+      's8-h': '8. Descargos de responsabilidad y limitación de responsabilidad',
+      's8-p1': 'La app se proporciona "tal como está" y "según disponibilidad" sin garantías de ningún tipo, expresas o implícitas. No garantizamos que la app esté libre de errores, ininterrumpida, ni que las lecturas o cálculos dentro de la app sean precisos o adecuados para ningún propósito en particular.',
+      's8-p2': 'En la máxima medida permitida por la ley aplicable, no seremos responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo que surja de tu uso o incapacidad de usar la app, incluidos, entre otros, la pérdida de datos, resultados de salud o decisiones tomadas basándose en información registrada en la app.',
+      's9-h': '9. Cambios en la app',
+      's9-p': 'Nos reservamos el derecho de modificar, suspender o discontinuar cualquier parte de la app en cualquier momento. Nos esforzaremos por notificar los cambios significativos a través de actualizaciones de la app. El uso continuado de la app después de los cambios constituye la aceptación de los términos actualizados.',
+      's10-h': '10. Cambios en estos términos',
+      's10-p': 'Podemos actualizar estos Términos de Servicio de vez en cuando. Cuando lo hagamos, actualizaremos la fecha de "Última actualización" en la parte superior de esta página. Los cambios sustanciales se comunicarán mediante una actualización de la app. El uso continuado de la app después de cualquier cambio constituye tu aceptación de los nuevos términos.',
+      's11-h': '11. Ley aplicable',
+      's11-p': 'Estos Términos se rigen e interpretan de acuerdo con la ley aplicable. Cualquier disputa que surja de estos Términos o de tu uso de la app se resolverá en la jurisdicción correspondiente.',
+      's12-h': '12. Contacto',
+      's12-p': 'Si tienes alguna pregunta sobre estos Términos de Servicio, contáctanos en: <a href="mailto:support@jlvela.app">support@jlvela.app</a>',
+      'footer-home': 'Inicio',
+      'footer-support': 'Soporte',
+      'footer-privacy': 'Política de Privacidad',
+      'footer-contact': 'Contacto',
+    }
+  };
+
+  const pageMeta = {
+    en: { title: 'Terms of Service — Preslia', description: 'Preslia Terms of Service. Your rights and responsibilities when using the Preslia health tracking app.' },
+    es: { title: 'Términos de Servicio — Preslia', description: 'Términos de Servicio de Preslia. Tus derechos y responsabilidades al usar la app de seguimiento de salud Preslia.' }
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.documentElement.lang = lang;
+    document.title = pageMeta[lang].title;
+    document.querySelector('meta[name="description"]').content = pageMeta[lang].description;
+    document.getElementById('lang-btn').textContent = lang === 'en' ? 'ES' : 'EN';
+    localStorage.setItem('preslia-lang', lang);
+  }
+
+  function toggleLang() {
+    const current = localStorage.getItem('preslia-lang') || 'en';
+    applyLang(current === 'en' ? 'es' : 'en');
+  }
+
+  applyLang(localStorage.getItem('preslia-lang') || 'en');
+</script>
 
 </body>
 </html>

@@ -59,6 +59,14 @@
       box-shadow: 0 2px 8px rgba(229,62,62,0.25);
     }
     .nav-cta:hover { opacity: 0.9; }
+    .lang-toggle {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+      background: transparent; border: 1.5px solid var(--border);
+      color: var(--muted); padding: 5px 10px; border-radius: 8px;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
+      margin-right: 2px;
+    }
+    .lang-toggle:hover { border-color: var(--red); color: var(--red); }
 
     /* ── HERO ────────────────────────────────────────────────────── */
     .hero {
@@ -322,11 +330,13 @@
       Preslia
     </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#premium">Premium</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="#download" class="nav-cta">Download</a>
+      <a href="/" data-i18n="nav-all-apps">← All Apps</a>
+      <a href="#features" data-i18n="nav-features">Features</a>
+      <a href="#premium" data-i18n="nav-premium">Premium</a>
+      <a href="support.html" data-i18n="nav-support">Support</a>
+      <a href="privacy.html" data-i18n="nav-privacy">Privacy</a>
+      <button class="lang-toggle" id="lang-btn" onclick="toggleLang()">ES</button>
+      <a href="#download" class="nav-cta" data-i18n="nav-download">Download</a>
     </div>
   </div>
 </div>
@@ -334,9 +344,9 @@
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
 <div class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow">❤️ Health tracking, reimagined</div>
-    <h1>Know your <span>vitals.</span><br>Own your data.</h1>
-    <p class="hero-sub">
+    <div class="hero-eyebrow" data-i18n="hero-eyebrow">❤️ Health tracking, reimagined</div>
+    <h1 data-i18n="hero-h1">Know your <span>vitals.</span><br>Own your data.</h1>
+    <p class="hero-sub" data-i18n="hero-sub">
       Track blood pressure, weight, heart rate, sleep, caffeine, and medications —
       all stored privately on your device. No accounts. No cloud. No subscriptions.
     </p>
@@ -344,24 +354,24 @@
       <a href="#" class="btn-store">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div class="btn-store-label">
-          <span class="btn-store-tiny">Download on the</span>
+          <span class="btn-store-tiny" data-i18n="store-ios-tiny">Download on the</span>
           <span class="btn-store-name">App Store</span>
         </div>
       </a>
       <a href="#" class="btn-store">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.37.21.8.21 1.18 0l11.38-6.58-2.46-2.46-10.1 9.04zm15.6-9.02L5.88 7.82 3.18.24C2.8.03 2.38.04 2 .26v23.48c.38.22.8.21 1.18 0l15.6-9.0zm1.04-5.42L16.74 7.5l-2.46 2.46 2.46 2.46 3.08-1.78c.88-.51.88-1.37 0-1.82z"/></svg>
         <div class="btn-store-label">
-          <span class="btn-store-tiny">Get it on</span>
+          <span class="btn-store-tiny" data-i18n="store-android-tiny">Get it on</span>
           <span class="btn-store-name">Google Play</span>
         </div>
       </a>
     </div>
     <div class="hero-trust">
-      <span>Free to download</span>
+      <span data-i18n="trust-free">Free to download</span>
       <span class="hero-trust-dot"></span>
-      <span>No account required</span>
+      <span data-i18n="trust-noaccount">No account required</span>
       <span class="hero-trust-dot"></span>
-      <span>100% local data</span>
+      <span data-i18n="trust-local">100% local data</span>
     </div>
   </div>
 
@@ -375,32 +385,32 @@
 <!-- ── SCREENSHOTS ────────────────────────────────────────────────────── -->
 <div class="screenshots-section">
   <div class="screenshots-inner">
-    <div class="section-label" style="padding-left:0; margin-bottom:12px;">See every screen</div>
-    <div class="section-title" style="font-size:clamp(22px,2.5vw,32px); margin-bottom:32px;">Each screen with a purpose</div>
+    <div class="section-label" style="padding-left:0; margin-bottom:12px;" data-i18n="screenshots-label">See every screen</div>
+    <div class="section-title" style="font-size:clamp(22px,2.5vw,32px); margin-bottom:32px;" data-i18n="screenshots-title">Each screen with a purpose</div>
     <div class="screenshots-scroll">
       <div class="screenshot-item">
         <img src="screenshot-home.png" alt="Home tab" />
-        <div class="screenshot-label">Home</div>
+        <div class="screenshot-label" data-i18n="label-home">Home</div>
       </div>
       <div class="screenshot-item">
         <img src="screenshot-stats.png" alt="Stats tab" />
-        <div class="screenshot-label">Stats</div>
+        <div class="screenshot-label" data-i18n="label-stats">Stats</div>
       </div>
       <div class="screenshot-item">
         <img src="screenshot-calendar.png" alt="Calendar tab" />
-        <div class="screenshot-label">Calendar</div>
+        <div class="screenshot-label" data-i18n="label-calendar">Calendar</div>
       </div>
       <div class="screenshot-item">
         <img src="screenshot-meds.png" alt="Medications tab" />
-        <div class="screenshot-label">Medications</div>
+        <div class="screenshot-label" data-i18n="label-meds">Medications</div>
       </div>
       <div class="screenshot-item">
         <img src="screenshot-doctor.png" alt="Doctor prep view" />
-        <div class="screenshot-label">Doctor Prep</div>
+        <div class="screenshot-label" data-i18n="label-doctor">Doctor Prep</div>
       </div>
       <div class="screenshot-item">
         <img src="screenshot-report.png" alt="PDF health report" />
-        <div class="screenshot-label">PDF Report</div>
+        <div class="screenshot-label" data-i18n="label-report">PDF Report</div>
       </div>
     </div>
   </div>
@@ -409,45 +419,45 @@
 <!-- ── FEATURES ──────────────────────────────────────────────────────── -->
 <div style="background:#fff;" id="features">
   <div class="section">
-    <div class="section-label">Everything you need</div>
-    <div class="section-title">Built for real health tracking</div>
-    <p class="section-sub">Six types of vitals, medication management, custom metrics, and trend charts — all in one app that respects your privacy.</p>
+    <div class="section-label" data-i18n="features-label">Everything you need</div>
+    <div class="section-title" data-i18n="features-title">Built for real health tracking</div>
+    <p class="section-sub" data-i18n="features-sub">Six types of vitals, medication management, custom metrics, and trend charts — all in one app that respects your privacy.</p>
     <div class="features-grid">
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(229,62,62,0.1);">❤️</div>
-        <div class="feature-title">Blood Pressure</div>
-        <p class="feature-desc">Log systolic, diastolic, and pulse. Automatic classification (Normal, Elevated, Stage 1 & 2). Tap "Doctor prep" for a ready-to-share summary with morning/evening averages and trend charts.</p>
+        <div class="feature-title" data-i18n="feat1-title">Blood Pressure</div>
+        <p class="feature-desc" data-i18n="feat1-desc">Log systolic, diastolic, and pulse. Automatic classification (Normal, Elevated, Stage 1 &amp; 2). Tap "Doctor prep" for a ready-to-share summary with morning/evening averages and trend charts.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(14,165,233,0.1);">⚖️</div>
-        <div class="feature-title">Weight & Heart Rate</div>
-        <p class="feature-desc">Track weight in kg or lbs with an optional goal. Log resting heart rate alongside your other vitals. Charts show your progress over any time range.</p>
+        <div class="feature-title" data-i18n="feat2-title">Weight &amp; Heart Rate</div>
+        <p class="feature-desc" data-i18n="feat2-desc">Track weight in kg or lbs with an optional goal. Log resting heart rate alongside your other vitals. Charts show your progress over any time range.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(139,92,246,0.1);">😴</div>
-        <div class="feature-title">Sleep & Caffeine</div>
-        <p class="feature-desc">Log sleep hours and caffeine intake. Correlate rest and stimulants with your blood pressure trends to find what affects you most.</p>
+        <div class="feature-title" data-i18n="feat3-title">Sleep &amp; Caffeine</div>
+        <p class="feature-desc" data-i18n="feat3-desc">Log sleep hours and caffeine intake. Correlate rest and stimulants with your blood pressure trends to find what affects you most.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(34,197,94,0.1);">💊</div>
-        <div class="feature-title">Medication Manager</div>
-        <p class="feature-desc">Add medications with dose, frequency, and color code. Log each dose with one tap and build a streak. Daily reminders keep you on track, and full history is included in every PDF report.</p>
+        <div class="feature-title" data-i18n="feat4-title">Medication Manager</div>
+        <p class="feature-desc" data-i18n="feat4-desc">Add medications with dose, frequency, and color code. Log each dose with one tap and build a streak. Daily reminders keep you on track, and full history is included in every PDF report.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(245,158,11,0.1);">📈</div>
-        <div class="feature-title">Charts & Trends</div>
-        <p class="feature-desc">Interactive charts across 5 time ranges (7d to 1y) with daily or weekly averages. Calendar view shows every logged day at a glance. Export a polished PDF in one tap.</p>
+        <div class="feature-title" data-i18n="feat5-title">Charts &amp; Trends</div>
+        <p class="feature-desc" data-i18n="feat5-desc">Interactive charts across 5 time ranges (7d to 1y) with daily or weekly averages. Calendar view shows every logged day at a glance. Export a polished PDF in one tap.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background:rgba(236,72,153,0.1);">👥</div>
-        <div class="feature-title">Multiple Profiles</div>
-        <p class="feature-desc">Track vitals for your whole household — yourself, a partner, or an elderly parent. Each profile is completely separate and independent.</p>
+        <div class="feature-title" data-i18n="feat6-title">Multiple Profiles</div>
+        <p class="feature-desc" data-i18n="feat6-desc">Track vitals for your whole household — yourself, a partner, or an elderly parent. Each profile is completely separate and independent.</p>
       </div>
 
     </div>
@@ -457,24 +467,24 @@
 <!-- ── HOW IT WORKS ──────────────────────────────────────────────────── -->
 <div class="how-section">
   <div class="section">
-    <div class="section-label">Simple by design</div>
-    <div class="section-title">Up and running in seconds</div>
-    <p class="section-sub">No sign-up forms, no cloud setup, no subscription prompts on first launch. Just open the app and start tracking.</p>
+    <div class="section-label" data-i18n="how-label">Simple by design</div>
+    <div class="section-title" data-i18n="how-title">Up and running in seconds</div>
+    <p class="section-sub" data-i18n="how-sub">No sign-up forms, no cloud setup, no subscription prompts on first launch. Just open the app and start tracking.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-title">Create a profile</div>
-        <p class="step-desc">Add your name on first launch. Add more profiles for family members anytime — each with its own complete history and medications.</p>
+        <div class="step-title" data-i18n="step1-title">Create a profile</div>
+        <p class="step-desc" data-i18n="step1-desc">Add your name on first launch. Add more profiles for family members anytime — each with its own complete history and medications.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-title">Log your readings</div>
-        <p class="step-desc">Tap the + button to add blood pressure, weight, heart rate, sleep, or caffeine. Readings are timestamped automatically or you can backdate them.</p>
+        <div class="step-title" data-i18n="step2-title">Log your readings</div>
+        <p class="step-desc" data-i18n="step2-desc">Tap the + button to add blood pressure, weight, heart rate, sleep, or caffeine. Readings are timestamped automatically or you can backdate them.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-title">See your trends</div>
-        <p class="step-desc">Visit Stats for interactive charts and rolling averages, or tap "Doctor prep" on the home screen for a one-tap summary of your last 30, 90, or 180 days — ready to share with your doctor.</p>
+        <div class="step-title" data-i18n="step3-title">See your trends</div>
+        <p class="step-desc" data-i18n="step3-desc">Visit Stats for interactive charts and rolling averages, or tap "Doctor prep" on the home screen for a one-tap summary of your last 30, 90, or 180 days — ready to share with your doctor.</p>
       </div>
     </div>
   </div>
@@ -484,38 +494,38 @@
 <div class="privacy-stripe">
   <div class="privacy-inner">
     <div>
-      <div class="section-label" style="color:#FC8181;">Your data. Your device.</div>
-      <h2 class="privacy-title">We <span>never see</span> your health data. Ever.</h2>
-      <p class="privacy-desc">There are no servers, no accounts, and no cloud sync. Every reading you log stays in your device's local storage. Preslia has no way to access it — by design.</p>
-      <a href="privacy.html" class="privacy-link">Read the full privacy policy →</a>
+      <div class="section-label" style="color:#FC8181;" data-i18n="privacy-label">Your data. Your device.</div>
+      <h2 class="privacy-title" data-i18n="privacy-title">We <span>never see</span> your health data. Ever.</h2>
+      <p class="privacy-desc" data-i18n="privacy-desc">There are no servers, no accounts, and no cloud sync. Every reading you log stays in your device's local storage. Preslia has no way to access it — by design.</p>
+      <a href="privacy.html" class="privacy-link" data-i18n="privacy-link">Read the full privacy policy →</a>
     </div>
     <div class="privacy-items">
       <div class="privacy-item">
         <div class="privacy-item-icon">🔒</div>
         <div>
-          <div class="privacy-item-title">Stored locally only</div>
-          <div class="privacy-item-desc">Hive database on your device. No sync. No upload. Ever.</div>
+          <div class="privacy-item-title" data-i18n="pi1-title">Stored locally only</div>
+          <div class="privacy-item-desc" data-i18n="pi1-desc">Hive database on your device. No sync. No upload. Ever.</div>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-item-icon">🚫</div>
         <div>
-          <div class="privacy-item-title">Zero analytics or tracking</div>
-          <div class="privacy-item-desc">No analytics SDKs. No ad networks. No crash reporters.</div>
+          <div class="privacy-item-title" data-i18n="pi2-title">Zero analytics or tracking</div>
+          <div class="privacy-item-desc" data-i18n="pi2-desc">No analytics SDKs. No ad networks. No crash reporters.</div>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-item-icon">👤</div>
         <div>
-          <div class="privacy-item-title">No account required</div>
-          <div class="privacy-item-desc">No email, no sign-up — not even optional. Just install and go.</div>
+          <div class="privacy-item-title" data-i18n="pi3-title">No account required</div>
+          <div class="privacy-item-desc" data-i18n="pi3-desc">No email, no sign-up — not even optional. Just install and go.</div>
         </div>
       </div>
       <div class="privacy-item">
         <div class="privacy-item-icon">📤</div>
         <div>
-          <div class="privacy-item-title">You control exports</div>
-          <div class="privacy-item-desc">PDF and backup exports go only to your share sheet — your choice.</div>
+          <div class="privacy-item-title" data-i18n="pi4-title">You control exports</div>
+          <div class="privacy-item-desc" data-i18n="pi4-desc">PDF and backup exports go only to your share sheet — your choice.</div>
         </div>
       </div>
     </div>
@@ -526,46 +536,46 @@
 <div class="premium-section" id="premium">
   <div class="premium-inner">
     <div>
-      <div class="premium-label">Preslia Premium</div>
-      <h2 class="premium-title">One price.<br>Everything unlocked.<br>Forever.</h2>
-      <p class="premium-sub">Premium is a single one-time purchase — not a subscription. Pay once and every feature is yours permanently, including all future updates.</p>
+      <div class="premium-label" data-i18n="premium-label">Preslia Premium</div>
+      <h2 class="premium-title" data-i18n="premium-title">One price.<br>Everything unlocked.<br>Forever.</h2>
+      <p class="premium-sub" data-i18n="premium-sub">Premium is a single one-time purchase — not a subscription. Pay once and every feature is yours permanently, including all future updates.</p>
       <div class="premium-features">
         <div class="premium-feat">
           <div class="premium-feat-icon" style="background:rgba(123,97,255,0.15);">📄</div>
-          <span><strong style="color:#fff;">PDF Reports</strong> — beautifully formatted doctor reports with charts, averages, and medication history</span>
+          <span data-i18n="pf1"><strong style="color:#fff;">PDF Reports</strong> — beautifully formatted doctor reports with charts, averages, and medication history</span>
         </div>
         <div class="premium-feat">
           <div class="premium-feat-icon" style="background:rgba(236,72,153,0.15);">🎨</div>
-          <span><strong style="color:#fff;">Custom Themes</strong> — choose from dozens of color schemes to personalize your experience</span>
+          <span data-i18n="pf2"><strong style="color:#fff;">Custom Themes</strong> — choose from dozens of color schemes to personalize your experience</span>
         </div>
         <div class="premium-feat">
           <div class="premium-feat-icon" style="background:rgba(14,165,233,0.15);">📊</div>
-          <span><strong style="color:#fff;">Custom Metrics</strong> — add any health metric you want to track beyond the built-in ones</span>
+          <span data-i18n="pf3"><strong style="color:#fff;">Custom Metrics</strong> — add any health metric you want to track beyond the built-in ones</span>
         </div>
         <div class="premium-feat">
           <div class="premium-feat-icon" style="background:rgba(34,197,94,0.15);">👥</div>
-          <span><strong style="color:#fff;">Unlimited Profiles</strong> — track vitals for your whole family, no cap</span>
+          <span data-i18n="pf4"><strong style="color:#fff;">Unlimited Profiles</strong> — track vitals for your whole family, no cap</span>
         </div>
         <div class="premium-feat">
           <div class="premium-feat-icon" style="background:rgba(245,158,11,0.15);">📱</div>
-          <span><strong style="color:#fff;">Home Screen Widget</strong> — see your latest blood pressure reading at a glance</span>
+          <span data-i18n="pf5"><strong style="color:#fff;">Home Screen Widget</strong> — see your latest blood pressure reading at a glance</span>
         </div>
       </div>
     </div>
     <div class="premium-card">
-      <div class="premium-card-badge">⭐ Preslia Premium</div>
+      <div class="premium-card-badge" data-i18n="premium-badge">⭐ Preslia Premium</div>
       <div class="premium-price">$9.99</div>
-      <div class="premium-price-cap">One-time purchase · No subscription · No expiry</div>
+      <div class="premium-price-cap" data-i18n="premium-price-cap">One-time purchase · No subscription · No expiry</div>
       <div class="premium-card-items">
-        <div class="premium-card-item"><span class="premium-check">✓</span> PDF doctor reports</div>
-        <div class="premium-card-item"><span class="premium-check">✓</span> Custom app themes</div>
-        <div class="premium-card-item"><span class="premium-check">✓</span> Custom metrics</div>
-        <div class="premium-card-item"><span class="premium-check">✓</span> Unlimited profiles</div>
-        <div class="premium-card-item"><span class="premium-check">✓</span> Home screen widget</div>
-        <div class="premium-card-item"><span class="premium-check">✓</span> All future updates</div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci1">PDF doctor reports</span></div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci2">Custom app themes</span></div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci3">Custom metrics</span></div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci4">Unlimited profiles</span></div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci5">Home screen widget</span></div>
+        <div class="premium-card-item"><span class="premium-check">✓</span> <span data-i18n="pci6">All future updates</span></div>
       </div>
-      <a href="#download" class="btn-gold">Get Premium →</a>
-      <p class="premium-card-note">Available via App Store or Google Play in-app purchase</p>
+      <a href="#download" class="btn-gold" data-i18n="btn-get-premium">Get Premium →</a>
+      <p class="premium-card-note" data-i18n="premium-note">Available via App Store or Google Play in-app purchase</p>
     </div>
   </div>
 </div>
@@ -573,20 +583,20 @@
 <!-- ── CTA ───────────────────────────────────────────────────────────── -->
 <div class="cta-section">
   <div class="cta-inner">
-    <h2 class="cta-title">Start tracking your health today</h2>
-    <p class="cta-sub">Free to download. No sign-up. Your data stays on your device — always.</p>
+    <h2 class="cta-title" data-i18n="cta-title">Start tracking your health today</h2>
+    <p class="cta-sub" data-i18n="cta-sub">Free to download. No sign-up. Your data stays on your device — always.</p>
     <div class="cta-btns">
       <a href="#" class="btn-store" style="background:#1A1A2E;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div class="btn-store-label">
-          <span class="btn-store-tiny">Download on the</span>
+          <span class="btn-store-tiny" data-i18n="store-ios-tiny">Download on the</span>
           <span class="btn-store-name">App Store</span>
         </div>
       </a>
       <a href="#" class="btn-store" style="background:#1A1A2E;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.37.21.8.21 1.18 0l11.38-6.58-2.46-2.46-10.1 9.04zm15.6-9.02L5.88 7.82 3.18.24C2.8.03 2.38.04 2 .26v23.48c.38.22.8.21 1.18 0l15.6-9.0zm1.04-5.42L16.74 7.5l-2.46 2.46 2.46 2.46 3.08-1.78c.88-.51.88-1.37 0-1.82z"/></svg>
         <div class="btn-store-label">
-          <span class="btn-store-tiny">Get it on</span>
+          <span class="btn-store-tiny" data-i18n="store-android-tiny">Get it on</span>
           <span class="btn-store-name">Google Play</span>
         </div>
       </a>
@@ -596,15 +606,222 @@
 
 <!-- ── FOOTER ────────────────────────────────────────────────────────── -->
 <footer>
-  <p>© 2026 Preslia · Made with care for your health</p>
+  <p data-i18n="footer-copy">© 2026 Preslia · Made with care for your health</p>
   <div class="footer-links">
-    <a href="/preslia/">Home</a>
-    <a href="support.html">Support</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
-    <a href="mailto:support@jlvela.app">Contact</a>
+    <a href="/preslia/" data-i18n="footer-home">Home</a>
+    <a href="support.html" data-i18n="footer-support">Support</a>
+    <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+    <a href="terms.html" data-i18n="footer-terms">Terms of Service</a>
+    <a href="mailto:support@jlvela.app" data-i18n="footer-contact">Contact</a>
   </div>
 </footer>
+
+<script>
+  const i18n = {
+    en: {
+      'nav-all-apps': '← All Apps',
+      'nav-features': 'Features',
+      'nav-premium': 'Premium',
+      'nav-support': 'Support',
+      'nav-privacy': 'Privacy',
+      'nav-download': 'Download',
+      'hero-eyebrow': '❤️ Health tracking, reimagined',
+      'hero-h1': 'Know your <span>vitals.</span><br>Own your data.',
+      'hero-sub': 'Track blood pressure, weight, heart rate, sleep, caffeine, and medications — all stored privately on your device. No accounts. No cloud. No subscriptions.',
+      'store-ios-tiny': 'Download on the',
+      'store-android-tiny': 'Get it on',
+      'trust-free': 'Free to download',
+      'trust-noaccount': 'No account required',
+      'trust-local': '100% local data',
+      'screenshots-label': 'See every screen',
+      'screenshots-title': 'Each screen with a purpose',
+      'label-home': 'Home',
+      'label-stats': 'Stats',
+      'label-calendar': 'Calendar',
+      'label-meds': 'Medications',
+      'label-doctor': 'Doctor Prep',
+      'label-report': 'PDF Report',
+      'features-label': 'Everything you need',
+      'features-title': 'Built for real health tracking',
+      'features-sub': 'Six types of vitals, medication management, custom metrics, and trend charts — all in one app that respects your privacy.',
+      'feat1-title': 'Blood Pressure',
+      'feat1-desc': 'Log systolic, diastolic, and pulse. Automatic classification (Normal, Elevated, Stage 1 &amp; 2). Tap "Doctor prep" for a ready-to-share summary with morning/evening averages and trend charts.',
+      'feat2-title': 'Weight &amp; Heart Rate',
+      'feat2-desc': 'Track weight in kg or lbs with an optional goal. Log resting heart rate alongside your other vitals. Charts show your progress over any time range.',
+      'feat3-title': 'Sleep &amp; Caffeine',
+      'feat3-desc': 'Log sleep hours and caffeine intake. Correlate rest and stimulants with your blood pressure trends to find what affects you most.',
+      'feat4-title': 'Medication Manager',
+      'feat4-desc': 'Add medications with dose, frequency, and color code. Log each dose with one tap and build a streak. Daily reminders keep you on track, and full history is included in every PDF report.',
+      'feat5-title': 'Charts &amp; Trends',
+      'feat5-desc': 'Interactive charts across 5 time ranges (7d to 1y) with daily or weekly averages. Calendar view shows every logged day at a glance. Export a polished PDF in one tap.',
+      'feat6-title': 'Multiple Profiles',
+      'feat6-desc': 'Track vitals for your whole household — yourself, a partner, or an elderly parent. Each profile is completely separate and independent.',
+      'how-label': 'Simple by design',
+      'how-title': 'Up and running in seconds',
+      'how-sub': 'No sign-up forms, no cloud setup, no subscription prompts on first launch. Just open the app and start tracking.',
+      'step1-title': 'Create a profile',
+      'step1-desc': 'Add your name on first launch. Add more profiles for family members anytime — each with its own complete history and medications.',
+      'step2-title': 'Log your readings',
+      'step2-desc': 'Tap the + button to add blood pressure, weight, heart rate, sleep, or caffeine. Readings are timestamped automatically or you can backdate them.',
+      'step3-title': 'See your trends',
+      'step3-desc': 'Visit Stats for interactive charts and rolling averages, or tap "Doctor prep" on the home screen for a one-tap summary of your last 30, 90, or 180 days — ready to share with your doctor.',
+      'privacy-label': 'Your data. Your device.',
+      'privacy-title': 'We <span>never see</span> your health data. Ever.',
+      'privacy-desc': "There are no servers, no accounts, and no cloud sync. Every reading you log stays in your device's local storage. Preslia has no way to access it — by design.",
+      'privacy-link': 'Read the full privacy policy →',
+      'pi1-title': 'Stored locally only',
+      'pi1-desc': 'Hive database on your device. No sync. No upload. Ever.',
+      'pi2-title': 'Zero analytics or tracking',
+      'pi2-desc': 'No analytics SDKs. No ad networks. No crash reporters.',
+      'pi3-title': 'No account required',
+      'pi3-desc': 'No email, no sign-up — not even optional. Just install and go.',
+      'pi4-title': 'You control exports',
+      'pi4-desc': 'PDF and backup exports go only to your share sheet — your choice.',
+      'premium-label': 'Preslia Premium',
+      'premium-title': 'One price.<br>Everything unlocked.<br>Forever.',
+      'premium-sub': 'Premium is a single one-time purchase — not a subscription. Pay once and every feature is yours permanently, including all future updates.',
+      'pf1': '<strong style="color:#fff;">PDF Reports</strong> — beautifully formatted doctor reports with charts, averages, and medication history',
+      'pf2': '<strong style="color:#fff;">Custom Themes</strong> — choose from dozens of color schemes to personalize your experience',
+      'pf3': '<strong style="color:#fff;">Custom Metrics</strong> — add any health metric you want to track beyond the built-in ones',
+      'pf4': '<strong style="color:#fff;">Unlimited Profiles</strong> — track vitals for your whole family, no cap',
+      'pf5': '<strong style="color:#fff;">Home Screen Widget</strong> — see your latest blood pressure reading at a glance',
+      'premium-badge': '⭐ Preslia Premium',
+      'premium-price-cap': 'One-time purchase · No subscription · No expiry',
+      'pci1': 'PDF doctor reports',
+      'pci2': 'Custom app themes',
+      'pci3': 'Custom metrics',
+      'pci4': 'Unlimited profiles',
+      'pci5': 'Home screen widget',
+      'pci6': 'All future updates',
+      'btn-get-premium': 'Get Premium →',
+      'premium-note': 'Available via App Store or Google Play in-app purchase',
+      'cta-title': 'Start tracking your health today',
+      'cta-sub': 'Free to download. No sign-up. Your data stays on your device — always.',
+      'footer-copy': '© 2026 Preslia · Made with care for your health',
+      'footer-home': 'Home',
+      'footer-support': 'Support',
+      'footer-privacy': 'Privacy Policy',
+      'footer-terms': 'Terms of Service',
+      'footer-contact': 'Contact',
+    },
+    es: {
+      'nav-all-apps': '← Todas las Apps',
+      'nav-features': 'Características',
+      'nav-premium': 'Premium',
+      'nav-support': 'Soporte',
+      'nav-privacy': 'Privacidad',
+      'nav-download': 'Descargar',
+      'hero-eyebrow': '❤️ Control de salud, reinventado',
+      'hero-h1': 'Conoce tus <span>signos vitales.</span><br>Controla tus datos.',
+      'hero-sub': 'Registra presión arterial, peso, ritmo cardíaco, sueño, cafeína y medicamentos — todo almacenado de forma privada en tu dispositivo. Sin cuentas. Sin nube. Sin suscripciones.',
+      'store-ios-tiny': 'Disponible en el',
+      'store-android-tiny': 'Consíguelo en',
+      'trust-free': 'Descarga gratuita',
+      'trust-noaccount': 'Sin cuenta requerida',
+      'trust-local': '100% datos locales',
+      'screenshots-label': 'Explora cada pantalla',
+      'screenshots-title': 'Cada pantalla con un propósito',
+      'label-home': 'Inicio',
+      'label-stats': 'Estadísticas',
+      'label-calendar': 'Calendario',
+      'label-meds': 'Medicamentos',
+      'label-doctor': 'Consulta Médica',
+      'label-report': 'Reporte PDF',
+      'features-label': 'Todo lo que necesitas',
+      'features-title': 'Creado para el seguimiento real de salud',
+      'features-sub': 'Seis tipos de signos vitales, gestión de medicamentos, métricas personalizadas y gráficas de tendencias — todo en una app que respeta tu privacidad.',
+      'feat1-title': 'Presión Arterial',
+      'feat1-desc': 'Registra sistólica, diastólica y pulso. Clasificación automática (Normal, Elevada, Etapa 1 y 2). Toca "Preparar consulta" para un resumen listo para compartir con promedios matutinos/nocturnos y gráficas de tendencias.',
+      'feat2-title': 'Peso y Ritmo Cardíaco',
+      'feat2-desc': 'Registra tu peso en kg o lb con una meta opcional. Anota tu ritmo cardíaco en reposo junto con tus otros signos vitales. Las gráficas muestran tu progreso en cualquier período.',
+      'feat3-title': 'Sueño y Cafeína',
+      'feat3-desc': 'Registra horas de sueño y consumo de cafeína. Correlaciona el descanso y los estimulantes con tus tendencias de presión arterial para descubrir qué te afecta más.',
+      'feat4-title': 'Gestión de Medicamentos',
+      'feat4-desc': 'Agrega medicamentos con dosis, frecuencia y código de color. Registra cada dosis con un toque y construye una racha. Los recordatorios diarios te mantienen al día, y el historial completo se incluye en cada reporte PDF.',
+      'feat5-title': 'Gráficas y Tendencias',
+      'feat5-desc': 'Gráficas interactivas en 5 rangos de tiempo (7d a 1 año) con promedios diarios o semanales. La vista de calendario muestra cada día registrado de un vistazo. Exporta un PDF elegante con un toque.',
+      'feat6-title': 'Múltiples Perfiles',
+      'feat6-desc': 'Registra los signos vitales de toda tu familia — tú, tu pareja o un familiar mayor. Cada perfil es completamente separado e independiente.',
+      'how-label': 'Simple por diseño',
+      'how-title': 'Listo en segundos',
+      'how-sub': 'Sin formularios de registro, sin configuración en la nube, sin avisos de suscripción al primer uso. Solo abre la app y empieza a registrar.',
+      'step1-title': 'Crea un perfil',
+      'step1-desc': 'Añade tu nombre al primer inicio. Agrega más perfiles para familiares en cualquier momento — cada uno con su propio historial y medicamentos.',
+      'step2-title': 'Registra tus lecturas',
+      'step2-desc': 'Toca el botón + para agregar presión arterial, peso, ritmo cardíaco, sueño o cafeína. Las lecturas se registran con fecha automáticamente o puedes antedatarlas.',
+      'step3-title': 'Revisa tus tendencias',
+      'step3-desc': 'Visita Estadísticas para gráficas interactivas y promedios acumulados, o toca "Preparar consulta" en la pantalla de inicio para un resumen de tus últimos 30, 90 o 180 días — listo para compartir con tu médico.',
+      'privacy-label': 'Tus datos. Tu dispositivo.',
+      'privacy-title': 'Nunca <span>veremos</span> tus datos de salud. Jamás.',
+      'privacy-desc': 'No hay servidores, ni cuentas, ni sincronización en la nube. Cada lectura que registras se queda en el almacenamiento local de tu dispositivo. Preslia no tiene forma de accederla — por diseño.',
+      'privacy-link': 'Lee la política de privacidad completa →',
+      'pi1-title': 'Solo almacenado localmente',
+      'pi1-desc': 'Base de datos Hive en tu dispositivo. Sin sincronización. Sin subidas. Jamás.',
+      'pi2-title': 'Sin analíticas ni rastreo',
+      'pi2-desc': 'Sin SDKs de analíticas. Sin redes publicitarias. Sin reportes de fallos.',
+      'pi3-title': 'Sin cuenta requerida',
+      'pi3-desc': 'Sin correo, sin registro — ni siquiera opcional. Solo instala y empieza.',
+      'pi4-title': 'Tú controlas las exportaciones',
+      'pi4-desc': 'Las exportaciones PDF y de respaldo solo van a tu hoja de compartir — tu elección.',
+      'premium-label': 'Preslia Premium',
+      'premium-title': 'Un precio.<br>Todo desbloqueado.<br>Para siempre.',
+      'premium-sub': 'Premium es una compra única — no una suscripción. Paga una vez y todas las funciones son tuyas para siempre, incluyendo todas las actualizaciones futuras.',
+      'pf1': '<strong style="color:#fff;">Reportes PDF</strong> — informes médicos con formato elegante que incluyen gráficas, promedios e historial de medicamentos',
+      'pf2': '<strong style="color:#fff;">Temas Personalizados</strong> — elige entre decenas de esquemas de colores para personalizar tu experiencia',
+      'pf3': '<strong style="color:#fff;">Métricas Personalizadas</strong> — agrega cualquier métrica de salud que desees registrar más allá de las integradas',
+      'pf4': '<strong style="color:#fff;">Perfiles Ilimitados</strong> — registra los signos vitales de toda tu familia, sin límite',
+      'pf5': '<strong style="color:#fff;">Widget de Pantalla de Inicio</strong> — ve tu última lectura de presión arterial de un vistazo',
+      'premium-badge': '⭐ Preslia Premium',
+      'premium-price-cap': 'Compra única · Sin suscripción · Sin vencimiento',
+      'pci1': 'Reportes PDF para el médico',
+      'pci2': 'Temas personalizados',
+      'pci3': 'Métricas personalizadas',
+      'pci4': 'Perfiles ilimitados',
+      'pci5': 'Widget de pantalla de inicio',
+      'pci6': 'Todas las actualizaciones futuras',
+      'btn-get-premium': 'Obtener Premium →',
+      'premium-note': 'Disponible como compra integrada en App Store o Google Play',
+      'cta-title': 'Comienza a rastrear tu salud hoy',
+      'cta-sub': 'Descarga gratuita. Sin registro. Tus datos se quedan en tu dispositivo — siempre.',
+      'footer-copy': '© 2026 Preslia · Hecho con cuidado para tu salud',
+      'footer-home': 'Inicio',
+      'footer-support': 'Soporte',
+      'footer-privacy': 'Política de Privacidad',
+      'footer-terms': 'Términos de Servicio',
+      'footer-contact': 'Contacto',
+    }
+  };
+
+  const pageMeta = {
+    en: {
+      title: 'Preslia — Health Tracker',
+      description: 'Track blood pressure, weight, heart rate, sleep, and medications — all on your device. No accounts. No cloud. Just your health data, your way.'
+    },
+    es: {
+      title: 'Preslia — Rastreador de Salud',
+      description: 'Registra presión arterial, peso, ritmo cardíaco, sueño y medicamentos — todo en tu dispositivo. Sin cuentas. Sin nube. Solo tus datos de salud, a tu manera.'
+    }
+  };
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.documentElement.lang = lang;
+    document.title = pageMeta[lang].title;
+    document.querySelector('meta[name="description"]').content = pageMeta[lang].description;
+    document.getElementById('lang-btn').textContent = lang === 'en' ? 'ES' : 'EN';
+    localStorage.setItem('preslia-lang', lang);
+  }
+
+  function toggleLang() {
+    const current = localStorage.getItem('preslia-lang') || 'en';
+    applyLang(current === 'en' ? 'es' : 'en');
+  }
+
+  applyLang(localStorage.getItem('preslia-lang') || 'en');
+</script>
 
 </body>
 </html>
